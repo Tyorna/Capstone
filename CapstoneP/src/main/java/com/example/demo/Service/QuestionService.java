@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Repository.QuestionRepository;
 import com.example.demo.entities.Question;
+import com.example.demo.exceptions.NotFoundException;
 import com.example.demo.payload.QuestionPayload;
 
 @Service
@@ -21,11 +22,11 @@ public class QuestionService {
 	QuestionRepository qRepository;
 
 	public Question save(QuestionPayload body) {
-		Question newUser = new Question(body.getText(), body.getLevel(), body.getAnswer(), body.getCorrectAnswer());
-		return qRepository.save(newUser);
+		Question newQuestion = new Question(body.getText(), body.getLevel(), body.getAnswer(), body.getCorrectAnswer());
+		return qRepository.save(newQuestion);
 	}
 
-	public List<Question> getUsers() {
+	public List<Question> getQuestions() {
 		return qRepository.findAll();
 	}
 
@@ -35,7 +36,21 @@ public class QuestionService {
 		return qRepository.findAll(pageable);
 	}
 
-	public Optional<Question> findById(UUID id) {
-		return qRepository.findById(id);
+	public Question findById(UUID id) throws NotFoundException {
+		return qRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
+	}
+
+	public Question findByIdAndUpdate(UUID id, QuestionPayload body) throws NotFoundException {
+		Question found = this.findById(id);
+		found.setText(body.getText());
+		found.setLevel(body.getLevel());
+		found.setAnswer(body.getAnswer());
+		found.setCorrectAnswer(body.getCorrectAnswer());
+		return qRepository.save(found);
+	}
+
+	public void findByIdAndDelete(UUID id) throws NotFoundException {
+		Question found = this.findById(id);
+		qRepository.delete(found);
 	}
 }

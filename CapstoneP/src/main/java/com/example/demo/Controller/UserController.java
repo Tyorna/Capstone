@@ -37,18 +37,18 @@ public class UserController {
 	}
 
 	@GetMapping("/{userId}")
-	public Optional<User> findById(@PathVariable UUID userId) {
+	public User findById(@PathVariable UUID userId) {
 		return userService.findById(userId);
 	}
 
-//	@PutMapping("/{userId}")
-//	public User updateUser(@PathVariable UUID userId, @RequestBody UserPayload body) {
-//		return userService.findByIdAndUpdate(userId, body);
-//	}
-//
-//	@DeleteMapping("/{userId}")
-//	@ResponseStatus(HttpStatus.NO_CONTENT)
-//	public void deleteUser(@PathVariable UUID userId) {
-//		userService.findByIdAndDelete(userId);
-//	}
+	@PutMapping("/{userId}")
+	public User updateUser(@PathVariable UUID userId, @RequestBody UserPayload body) {
+		return userService.findByIdAndUpdate(userId, body);
+	}
+
+	@DeleteMapping("/{userId}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deleteUser(@PathVariable UUID userId) {
+		userService.findByIdAndDelete(userId);
+	}
 }
