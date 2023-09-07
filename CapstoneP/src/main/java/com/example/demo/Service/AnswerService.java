@@ -11,7 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Repository.AnswerRepository;
-import com.example.demo.entities.Answer;
+import com.example.demo.entities.AnswerN;
 import com.example.demo.exceptions.NotFoundException;
 import com.example.demo.payload.AnswerPayload;
 
@@ -20,34 +20,35 @@ public class AnswerService {
 	@Autowired
 	AnswerRepository aRepository;
 
-	public Answer save(AnswerPayload body) {
-		Answer newAnswer = new Answer(body.getText(), body.isCorrect());
+	public AnswerN save(AnswerPayload body) {
+		AnswerN newAnswer = new AnswerN(body.getText(), body.isCorrect(), body.getQuestion());
 		return aRepository.save(newAnswer);
 	}
 
-	public List<Answer> getAnswer() {
+	public List<AnswerN> getAnswer() {
 		return aRepository.findAll();
 	}
 
-	public Page<Answer> find(int page, int size, String sort) {
+	public Page<AnswerN> find(int page, int size, String sort) {
 		Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
 
 		return aRepository.findAll(pageable);
 	}
 
-	public Answer findById(UUID id) throws NotFoundException {
+	public AnswerN findById(UUID id) throws NotFoundException {
 		return aRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
 	}
 
-	public Answer findByIdAndUpdate(UUID id, AnswerPayload body) throws NotFoundException {
-		Answer found = this.findById(id);
+	public AnswerN findByIdAndUpdate(UUID id, AnswerPayload body) throws NotFoundException {
+		AnswerN found = this.findById(id);
 		found.setText(body.getText());
 		found.setCorrect(body.isCorrect());
+		found.setQuestion(body.getQuestion());
 		return aRepository.save(found);
 	}
 
 	public void findByIdAndDelete(UUID id) throws NotFoundException {
-		Answer found = this.findById(id);
+		AnswerN found = this.findById(id);
 		aRepository.delete(found);
 	}
 }

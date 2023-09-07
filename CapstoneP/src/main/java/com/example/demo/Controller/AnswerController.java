@@ -10,30 +10,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Service.AnswerService;
-import com.example.demo.entities.Answer;
+import com.example.demo.entities.AnswerN;
 import com.example.demo.payload.AnswerPayload;
 
+@RestController
+@RequestMapping("/answers")
 public class AnswerController {
 	@Autowired
 	AnswerService aService;
 
 	@PostMapping("")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Answer saveUser(@RequestBody AnswerPayload body) {
-		Answer createdQuestion = aService.save(body);
+	public AnswerN saveUser(@RequestBody AnswerPayload body) {
+		AnswerN createdQuestion = aService.save(body);
 		return createdQuestion;
 	}
 
 	@GetMapping("/{Answerid}")
-	public Answer findById(@PathVariable UUID Answerid) {
+	public AnswerN findById(@PathVariable UUID Answerid) {
 		return aService.findById(Answerid);
 	}
-	
+
 	@PutMapping("/{Answerid}")
-	public Answer updateUser(@PathVariable UUID AnswerId, @RequestBody AnswerPayload body) {
+	public AnswerN updateUser(@PathVariable UUID AnswerId, @RequestBody AnswerPayload body) {
 		return aService.findByIdAndUpdate(AnswerId, body);
 	}
 

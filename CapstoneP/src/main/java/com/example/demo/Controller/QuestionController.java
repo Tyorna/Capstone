@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Service.QuestionService;
-import com.example.demo.entities.Question;
+import com.example.demo.entities.QuestionN;
 import com.example.demo.payload.QuestionPayload;
 
 @RestController
@@ -27,18 +27,18 @@ public class QuestionController {
 
 		@PostMapping("")
 		@ResponseStatus(HttpStatus.CREATED)
-		public Question saveUser(@RequestBody QuestionPayload body) {
-			Question createdQuestion = qService.save(body);
+		public QuestionN saveUser(@RequestBody QuestionPayload body) {
+			QuestionN createdQuestion = qService.save(body);
 			return createdQuestion;
 		}
 
 		@GetMapping("/{id}")
-		public Question findById(@PathVariable UUID id) {
+		public QuestionN findById(@PathVariable UUID id) {
 			return qService.findById(id);
 		}
 		
 		@PutMapping("/{id}")
-		public Question  updateUser(@PathVariable UUID id, @RequestBody QuestionPayload body) {
+		public QuestionN  updateUser(@PathVariable UUID id, @RequestBody QuestionPayload body) {
 			return qService.findByIdAndUpdate(id, body);
 		}
 
