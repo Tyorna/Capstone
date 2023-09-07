@@ -18,11 +18,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Questions")
+@Table(name = "domande")
 @Getter
 @Setter
 @NoArgsConstructor
-public class QuestionN {
+public class Domanda {
 	@Id
 	@GeneratedValue
 	private UUID id;
@@ -30,9 +30,9 @@ public class QuestionN {
 	@Enumerated(EnumType.STRING)
 	private Level level;
 	@OneToMany(mappedBy = "question")
-	private List<AnswerN> answers = new ArrayList<>();
+	private List<Risposta> answers = new ArrayList<>();
 
-	public QuestionN(String text, Level level) {
+	public Domanda(String text, Level level) {
 		this.text = text;
 		this.level = level;
 	}

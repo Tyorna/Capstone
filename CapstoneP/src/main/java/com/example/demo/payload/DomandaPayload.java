@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class QuestionPayload {
+public class DomandaPayload {
 	String text;
 	private Level level;
 }

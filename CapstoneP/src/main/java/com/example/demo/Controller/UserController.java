@@ -1,12 +1,10 @@
 package com.example.demo.Controller;
 
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +32,12 @@ public class UserController {
 	public User saveUser(@RequestBody UserPayload body) {
 		User createdUser = userService.save(body);
 		return createdUser;
+	}
+
+	@GetMapping("")
+	public Page<User> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size,
+			@RequestParam(defaultValue = "id") String sortBy) {
+		return userService.find(page, size, sortBy);
 	}
 
 	@GetMapping("/{userId}")

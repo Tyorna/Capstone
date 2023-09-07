@@ -10,44 +10,44 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Repository.QuestionRepository;
-import com.example.demo.entities.QuestionN;
+import com.example.demo.Repository.DomandaRepository;
+import com.example.demo.entities.Domanda;
 import com.example.demo.exceptions.NotFoundException;
-import com.example.demo.payload.QuestionPayload;
+import com.example.demo.payload.DomandaPayload;
 
 @Service
-public class QuestionService {
+public class DomandaService {
 	@Autowired
-	QuestionRepository qRepository;
+	DomandaRepository qRepository;
 
-	public QuestionN save(QuestionPayload body) {
-		QuestionN newQuestion = new QuestionN(body.getText(), body.getLevel());
+	public Domanda save(DomandaPayload body) {
+		Domanda newQuestion = new Domanda(body.getText(), body.getLevel());
 		return qRepository.save(newQuestion);
 	}
 
-	public List<QuestionN> getQuestions() {
+	public List<Domanda> getDomande() {
 		return qRepository.findAll();
 	}
 
-	public Page<QuestionN> find(int page, int size, String sort) {
+	public Page<Domanda> find(int page, int size, String sort) {
 		Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
 
 		return qRepository.findAll(pageable);
 	}
 
-	public QuestionN findById(UUID id) throws NotFoundException {
+	public Domanda findById(UUID id) throws NotFoundException {
 		return qRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
 	}
 
-	public QuestionN findByIdAndUpdate(UUID id, QuestionPayload body) throws NotFoundException {
-		QuestionN found = this.findById(id);
+	public Domanda findByIdAndUpdate(UUID id, DomandaPayload body) {
+		Domanda found = this.findById(id);
 		found.setText(body.getText());
 		found.setLevel(body.getLevel());
 		return qRepository.save(found);
 	}
 
-	public void findByIdAndDelete(UUID id) throws NotFoundException {
-		QuestionN found = this.findById(id);
+	public void findByIdAndDelete(UUID id) {
+		Domanda found = this.findById(id);
 		qRepository.delete(found);
 	}
 }

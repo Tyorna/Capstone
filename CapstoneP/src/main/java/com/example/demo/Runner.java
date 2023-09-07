@@ -5,46 +5,46 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.Level.Level;
-import com.example.demo.Repository.AnswerRepository;
-import com.example.demo.Repository.QuestionRepository;
-import com.example.demo.Service.AnswerService;
-import com.example.demo.Service.QuestionService;
-import com.example.demo.entities.AnswerN;
-import com.example.demo.entities.QuestionN;
-import com.example.demo.payload.AnswerPayload;
-import com.example.demo.payload.QuestionPayload;
+import com.example.demo.Repository.DomandaRepository;
+import com.example.demo.Repository.RispostaRepository;
+import com.example.demo.Service.DomandaService;
+import com.example.demo.Service.RispostaService;
+import com.example.demo.entities.Domanda;
+import com.example.demo.entities.Risposta;
+import com.example.demo.payload.DomandaPayload;
+import com.example.demo.payload.RispostaPayload;
 
 @Component
 public class Runner implements CommandLineRunner {
 
 	@Autowired
-	AnswerRepository aRepository;
+	RispostaRepository aRepository;
 
 	@Autowired
-	AnswerService aService;
+	RispostaService aService;
 
 	@Autowired
-	QuestionRepository uesRepository;
+	DomandaRepository dRepository;
 
 	@Autowired
-	QuestionService uesService;
+	DomandaService dService;
 
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 
-		QuestionPayload QuestionPay1 = new QuestionPayload("Shark is?", Level.DIFFICILE);
-		QuestionN dom1 = uesService.save(QuestionPay1);
+		DomandaPayload QuestionPay1 = new DomandaPayload("Shark is?", Level.DIFFICILE);
+		Domanda dom1 = dService.save(QuestionPay1);
 
-		AnswerPayload aPay1 = new AnswerPayload("Shark t", false, dom1);
-		AnswerPayload aPay2 = new AnswerPayload("Shark b", true, dom1);
-		AnswerPayload aPay3 = new AnswerPayload("Shark a", false, dom1);
-		AnswerPayload aPay4 = new AnswerPayload("Shark c", true, dom1);
+		RispostaPayload aPay1 = new RispostaPayload("Shark t", false, dom1);
+		RispostaPayload aPay2 = new RispostaPayload("Shark b", true, dom1);
+		RispostaPayload aPay3 = new RispostaPayload("Shark a", false, dom1);
+		RispostaPayload aPay4 = new RispostaPayload("Shark c", true, dom1);
 
-		AnswerN a1 = aService.save(aPay1);
-		AnswerN a2 = aService.save(aPay2);
-		AnswerN a3 = aService.save(aPay3);
-		AnswerN a4 = aService.save(aPay4);
+		Risposta a1 = aService.save(aPay1);
+		Risposta a2 = aService.save(aPay2);
+		Risposta a3 = aService.save(aPay3);
+		Risposta a4 = aService.save(aPay4);
 	}
 
 }
