@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import com.example.demo.Level.Level;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -29,7 +30,7 @@ public class Domanda {
 	private String text;
 	@Enumerated(EnumType.STRING)
 	private Level level;
-	@OneToMany(mappedBy = "question")
+	@OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
 	private List<Risposta> answers = new ArrayList<>();
 
 	public Domanda(String text, Level level) {

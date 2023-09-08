@@ -27,22 +27,22 @@ public class DomandaController {
 	@Autowired
 	DomandaService qService;
 
-	@PostMapping("")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Domanda saveQuestion(@RequestBody DomandaPayload body) {
 		Domanda createdQuestion = qService.save(body);
 		return createdQuestion;
 	}
 
-	@GetMapping("")
+	@GetMapping
 	public Page<Domanda> getDomande(@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "level") String sortBy) {
+			@RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "id") String sortBy) {
 		return qService.find(page, size, sortBy);
 	}
 
-	@GetMapping("/{domandaId}")
-	public Domanda findById(@PathVariable UUID domandaId) {
-		return qService.findById(domandaId);
+	@GetMapping("/{DomandaId}")
+	public Domanda findById(@PathVariable UUID DomandaId) {
+		return qService.findById(DomandaId);
 	}
 
 	@PutMapping("/{DomandaId}")

@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Repository.RispostaRepository;
@@ -21,8 +25,14 @@ public class RispostaService {
 		return aRepository.save(newAnswer);
 	}
 
-	public List<Risposta> getRisposte() {
+	public List<Risposta> getRisposta() {
 		return aRepository.findAll();
+	}
+
+	public Page<Risposta> find(int page, int size, String sort) {
+		Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
+
+		return aRepository.findAll(pageable);
 	}
 
 	public Risposta findById(UUID id) throws NotFoundException {
