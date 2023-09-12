@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg bg-dark border-bottom">
+  <div class="container-fluid">
+      <img src="../../../../assets/img/transparent-shark-bruce-disney-emoji-blitz-wiki-fandom-powered-by-wi5e72c354b42ba4.824431541584579412738.png">
+      <a class="navbar-brand fw-semibold text-danger" [routerLink]="['/']" routerLinkActive="active">SharkTest</a>
+      <button class="navbar-toggler bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item" *ngIf="!user">
+                  <a class="nav-link active text-white ms-1" aria-current="page" [routerLink]="['auth/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-white ms-1"  *ngIf="user" [routerLink]="['test']" routerLinkActive="active">Test</a>
+              </li>
+              <div class="dropdown" *ngIf="user">
+                <a class="btn btn-secondary nav-link text-white ms-1 dropdown-toggle" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Profilo
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" [routerLink]="['/profilo/dettagli/', user.id]">Informazioni</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['profilo/filmpref']">Test</a></li>
+                </ul>
+              </div>
+
+              <li class="nav-item" *ngIf="!user">
+                  <a class="nav-link text-white ms-1" [routerLink]="['auth/register']" routerLinkActive="active">Iscriviti</a>
+              </li>
+          </ul>
+          <button type="button" class="btn btn-danger ms-2 float-end rounded-pill text-white" *ngIf="user" (click)="logout()">Logout</button>
+      </div>
+  </div>
+</nav>

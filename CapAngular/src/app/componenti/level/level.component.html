@@ -1,0 +1,27 @@
+<div class="father">
+  <div class="container text-center">
+    <div class="level-selection">
+      <h2>Select a Level</h2>
+      <div>
+        <label>
+          <input type="radio" name="level" value="BASE" [(ngModel)]="selectedLevel" />
+          Easy
+        </label>
+      </div>
+
+      <div>
+        <label>
+          <input type="radio" name="level" value="MEDIO" [(ngModel)]="selectedLevel" />
+          Medium
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" name="level" value="DIFFICILE" [(ngModel)]="selectedLevel" />
+          Hard
+        </label>
+      </div>
+    </div>
+    <button class="btn btn-success" (click)="startTest()">Start Test</button>
+  </div>
+</div>

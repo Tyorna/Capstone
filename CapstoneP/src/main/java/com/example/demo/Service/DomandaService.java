@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Level.Level;
 import com.example.demo.Repository.DomandaRepository;
 import com.example.demo.entities.Domanda;
 import com.example.demo.exceptions.NotFoundException;
@@ -49,5 +50,10 @@ public class DomandaService {
 	public void findByIdAndDelete(UUID id) {
 		Domanda found = this.findById(id);
 		qRepository.delete(found);
+	}
+
+	public Page<Domanda> findByLevel(Level level, int page, int size, String sort) {
+		Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
+		return qRepository.findByLevel(level, pageable);
 	}
 }

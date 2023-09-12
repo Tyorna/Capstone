@@ -46,7 +46,7 @@ public class AuthController {
 
 		if (bcrypt.matches(body.getPassword(), user.getPassword())) {
 			String token = jwtTools.createToken(user);
-			return new LoginSuccessfullPayload(token);
+			return new LoginSuccessfullPayload(token, user);
 		} else {
 			throw new UnauthorizedException("Credenziali non valide");
 		}

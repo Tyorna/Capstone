@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Level.Level;
 import com.example.demo.Service.DomandaService;
 import com.example.demo.entities.Domanda;
 import com.example.demo.payload.DomandaPayload;
@@ -54,5 +55,13 @@ public class DomandaController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteUser(@PathVariable UUID DomandaId) {
 		qService.findByIdAndDelete(DomandaId);
+	}
+
+	@GetMapping("/by-level/{level}")
+	public Page<Domanda> getQuestionsByLevel(@PathVariable String level, @RequestParam(defaultValue = "0") int page,
+			@RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "id") String sortBy) {
+
+		Level questionLevel = Level.valueOf(level);
+		return qService.findByLevel(questionLevel, page, size, sortBy);
 	}
 }

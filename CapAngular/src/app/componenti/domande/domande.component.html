@@ -1,0 +1,15 @@
+<div class="father">
+  <div class="container text-center">
+    <div *ngFor="let question of questions">
+      <h2>{{ question.text }}</h2>
+      <ul>
+        <li *ngFor="let answer of question.answers">
+          <label>
+            <input type="radio" name="answer" [value]="answer.id">
+            {{ answer.text }}
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
