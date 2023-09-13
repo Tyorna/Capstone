@@ -11,6 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class RispostaPayload {
 	String text;
-	boolean isCorrect;
+	int isCorrect;
 	private Domanda question;
 }

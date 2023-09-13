@@ -37,10 +37,10 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionPay1 = new DomandaPayload("How many species of sharks are there?", Level.BASE);
 		Domanda dom1 = dService.save(QuestionPay1);
 
-		RispostaPayload aPay1 = new RispostaPayload("About 40", false, dom1);
-		RispostaPayload aPay2 = new RispostaPayload("About 100", false, dom1);
-		RispostaPayload aPay3 = new RispostaPayload("About 500", true, dom1);
-		RispostaPayload aPay4 = new RispostaPayload("About 900", false, dom1);
+		RispostaPayload aPay1 = new RispostaPayload("About 40", 0, dom1);
+		RispostaPayload aPay2 = new RispostaPayload("About 100", 0, dom1);
+		RispostaPayload aPay3 = new RispostaPayload("About 500", 1, dom1);
+		RispostaPayload aPay4 = new RispostaPayload("About 900", 0, dom1);
 
 		Risposta a1 = aService.save(aPay1);
 		Risposta a2 = aService.save(aPay2);
@@ -52,10 +52,10 @@ public class Runner implements CommandLineRunner {
 				Level.BASE);
 		Domanda dom2 = dService.save(QuestionPay2);
 
-		RispostaPayload aPay5 = new RispostaPayload("About 40 milions years", false, dom2);
-		RispostaPayload aPay6 = new RispostaPayload("About 100 milions years", false, dom2);
-		RispostaPayload aPay7 = new RispostaPayload("About 300 milions years", false, dom2);
-		RispostaPayload aPay8 = new RispostaPayload("About 450 milions years", true, dom2);
+		RispostaPayload aPay5 = new RispostaPayload("About 40 milions years", 0, dom2);
+		RispostaPayload aPay6 = new RispostaPayload("About 100 milions years", 0, dom2);
+		RispostaPayload aPay7 = new RispostaPayload("About 300 milions years", 0, dom2);
+		RispostaPayload aPay8 = new RispostaPayload("About 450 milions years", 1, dom2);
 
 		Risposta a5 = aService.save(aPay5);
 		Risposta a6 = aService.save(aPay6);
@@ -66,10 +66,10 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionPay3 = new DomandaPayload("Which one has the longest lifespan??", Level.BASE);
 		Domanda dom3 = dService.save(QuestionPay3);
 
-		RispostaPayload aPay9 = new RispostaPayload("The great white shark (Carcharodon carcharias) ", false, dom3);
-		RispostaPayload aPay10 = new RispostaPayload("The Greenland shark (Somniosus microcephalus)", true, dom3);
-		RispostaPayload aPay11 = new RispostaPayload("The common thresher (Alopias vulpinus)", false, dom3);
-		RispostaPayload aPay12 = new RispostaPayload("The scalloped hammerhead (Sphyrna lewini)", false, dom3);
+		RispostaPayload aPay9 = new RispostaPayload("The great white shark (Carcharodon carcharias) ", 0, dom3);
+		RispostaPayload aPay10 = new RispostaPayload("The Greenland shark (Somniosus microcephalus)", 1, dom3);
+		RispostaPayload aPay11 = new RispostaPayload("The common thresher (Alopias vulpinus)", 0, dom3);
+		RispostaPayload aPay12 = new RispostaPayload("The scalloped hammerhead (Sphyrna lewini)", 0, dom3);
 
 		Risposta a9 = aService.save(aPay9);
 		Risposta a10 = aService.save(aPay10);
@@ -80,10 +80,10 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionPay4 = new DomandaPayload("Which shark is the longest?", Level.BASE);
 		Domanda dom4 = dService.save(QuestionPay4);
 
-		RispostaPayload aPay13 = new RispostaPayload("The whale shark (Rhincodon typus)", true, dom4);
-		RispostaPayload aPay14 = new RispostaPayload("The basking shark (Cetorhinus maximus)", false, dom4);
-		RispostaPayload aPay15 = new RispostaPayload("The great white shark (Carcharodon carcharias)", false, dom4);
-		RispostaPayload aPay16 = new RispostaPayload("The tiger shark (Galeocerdo cuvier)", false, dom4);
+		RispostaPayload aPay13 = new RispostaPayload("The whale shark (Rhincodon typus)", 1, dom4);
+		RispostaPayload aPay14 = new RispostaPayload("The basking shark (Cetorhinus maximus)", 0, dom4);
+		RispostaPayload aPay15 = new RispostaPayload("The great white shark (Carcharodon carcharias)", 0, dom4);
+		RispostaPayload aPay16 = new RispostaPayload("The tiger shark (Galeocerdo cuvier)", 0, dom4);
 
 		Risposta a13 = aService.save(aPay13);
 		Risposta a14 = aService.save(aPay14);
@@ -94,10 +94,10 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionPay5 = new DomandaPayload("Who do prey on sharks ??", Level.BASE);
 		Domanda dom5 = dService.save(QuestionPay5);
 
-		RispostaPayload aPay17 = new RispostaPayload("TBD", false, dom5);
-		RispostaPayload aPay18 = new RispostaPayload("No one", false, dom5);
-		RispostaPayload aPay19 = new RispostaPayload("The orca (Orcinus orca)", true, dom5);
-		RispostaPayload aPay20 = new RispostaPayload("TBD", true, dom5);
+		RispostaPayload aPay17 = new RispostaPayload("TBD", 0, dom5);
+		RispostaPayload aPay18 = new RispostaPayload("No one", 0, dom5);
+		RispostaPayload aPay19 = new RispostaPayload("The orca (Orcinus orca)", 1, dom5);
+		RispostaPayload aPay20 = new RispostaPayload("TBD", 1, dom5);
 
 		Risposta a17 = aService.save(aPay17);
 		Risposta a18 = aService.save(aPay18);
@@ -108,8 +108,8 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionPay6 = new DomandaPayload("In sharks the skeleton is: ", Level.BASE);
 		Domanda dom6 = dService.save(QuestionPay6);
 
-		RispostaPayload aPay21 = new RispostaPayload("Bone", false, dom6);
-		RispostaPayload aPay22 = new RispostaPayload("Cartilaginous", true, dom6);
+		RispostaPayload aPay21 = new RispostaPayload("Bone", 0, dom6);
+		RispostaPayload aPay22 = new RispostaPayload("Cartilaginous", 1, dom6);
 
 		Risposta a21 = aService.save(aPay21);
 		Risposta a22 = aService.save(aPay22);
@@ -118,8 +118,8 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionPay7 = new DomandaPayload("Sharks only live in salt waters?", Level.BASE);
 		Domanda dom7 = dService.save(QuestionPay7);
 
-		RispostaPayload aPay25 = new RispostaPayload("True", false, dom7);
-		RispostaPayload aPay26 = new RispostaPayload("False", true, dom7);
+		RispostaPayload aPay25 = new RispostaPayload("true", 0, dom7);
+		RispostaPayload aPay26 = new RispostaPayload("false", 1, dom7);
 
 		Risposta a25 = aService.save(aPay25);
 		Risposta a26 = aService.save(aPay26);
@@ -129,10 +129,10 @@ public class Runner implements CommandLineRunner {
 				Level.BASE);
 		Domanda dom8 = dService.save(QuestionPay8);
 
-		RispostaPayload aPay29 = new RispostaPayload("Hearing", false, dom8);
-		RispostaPayload aPay30 = new RispostaPayload("Smell", true, dom8);
-		RispostaPayload aPay31 = new RispostaPayload("Sight", false, dom8);
-		RispostaPayload aPay32 = new RispostaPayload("Taste", false, dom8);
+		RispostaPayload aPay29 = new RispostaPayload("Hearing", 0, dom8);
+		RispostaPayload aPay30 = new RispostaPayload("Smell", 1, dom8);
+		RispostaPayload aPay31 = new RispostaPayload("Sight", 0, dom8);
+		RispostaPayload aPay32 = new RispostaPayload("Taste", 0, dom8);
 
 		Risposta a29 = aService.save(aPay29);
 		Risposta a30 = aService.save(aPay30);
@@ -144,10 +144,10 @@ public class Runner implements CommandLineRunner {
 				"Which shark species is known for its distinctive black tips on its fins?", Level.BASE);
 		Domanda dom9 = dService.save(QuestionPay9);
 
-		RispostaPayload aPay33 = new RispostaPayload("The bull shark (Carcharhinus leucas)", false, dom9);
-		RispostaPayload aPay34 = new RispostaPayload("Hammerhead Shark", false, dom9);
-		RispostaPayload aPay35 = new RispostaPayload("Lemon Shark", false, dom9);
-		RispostaPayload aPay36 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", true, dom9);
+		RispostaPayload aPay33 = new RispostaPayload("The bull shark (Carcharhinus leucas)", 0, dom9);
+		RispostaPayload aPay34 = new RispostaPayload("Hammerhead Shark", 0, dom9);
+		RispostaPayload aPay35 = new RispostaPayload("Lemon Shark", 0, dom9);
+		RispostaPayload aPay36 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", 1, dom9);
 
 		Risposta a33 = aService.save(aPay33);
 		Risposta a34 = aService.save(aPay34);
@@ -161,10 +161,10 @@ public class Runner implements CommandLineRunner {
 				Level.BASE);
 		Domanda dom10 = dService.save(QuestionPay10);
 
-		RispostaPayload aPay37 = new RispostaPayload("Electrostatic organs", false, dom10);
-		RispostaPayload aPay38 = new RispostaPayload("Electric fins", false, dom10);
-		RispostaPayload aPay39 = new RispostaPayload("Ampullae of Lorenzini", true, dom10);
-		RispostaPayload aPay40 = new RispostaPayload("Shock sensors", false, dom10);
+		RispostaPayload aPay37 = new RispostaPayload("Electrostatic organs", 0, dom10);
+		RispostaPayload aPay38 = new RispostaPayload("Electric fins", 0, dom10);
+		RispostaPayload aPay39 = new RispostaPayload("Ampullae of Lorenzini", 1, dom10);
+		RispostaPayload aPay40 = new RispostaPayload("Shock sensors", 0, dom10);
 
 		Risposta a37 = aService.save(aPay37);
 		Risposta a38 = aService.save(aPay38);
@@ -176,10 +176,10 @@ public class Runner implements CommandLineRunner {
 				Level.BASE);
 		Domanda dom11 = dService.save(QuestionPay11);
 
-		RispostaPayload aPay41 = new RispostaPayload("Stability and balance", true, dom11);
-		RispostaPayload aPay42 = new RispostaPayload("Steering", false, dom11);
-		RispostaPayload aPay43 = new RispostaPayload("Propulsion", false, dom11);
-		RispostaPayload aPay44 = new RispostaPayload("Capturing prey", false, dom11);
+		RispostaPayload aPay41 = new RispostaPayload("Stability and balance", 1, dom11);
+		RispostaPayload aPay42 = new RispostaPayload("Steering", 0, dom11);
+		RispostaPayload aPay43 = new RispostaPayload("Propulsion", 0, dom11);
+		RispostaPayload aPay44 = new RispostaPayload("Capturing prey", 0, dom11);
 
 		Risposta a41 = aService.save(aPay41);
 		Risposta a42 = aService.save(aPay42);
@@ -191,10 +191,10 @@ public class Runner implements CommandLineRunner {
 				"What is the scientific name for the smallest known shark species?", Level.MEDIO);
 		Domanda domM1 = dService.save(QuestionM1);
 
-		RispostaPayload bPay1 = new RispostaPayload("Squaliolus laticaudus", true, domM1);
-		RispostaPayload bPay2 = new RispostaPayload("Tinyus sharkus", false, domM1);
-		RispostaPayload bPay3 = new RispostaPayload("Miniatus miniatum", false, domM1);
-		RispostaPayload bPay4 = new RispostaPayload("Microsharkus microscopium", false, domM1);
+		RispostaPayload bPay1 = new RispostaPayload("Squaliolus laticaudus", 1, domM1);
+		RispostaPayload bPay2 = new RispostaPayload("Tinyus sharkus", 0, domM1);
+		RispostaPayload bPay3 = new RispostaPayload("Miniatus miniatum", 0, domM1);
+		RispostaPayload bPay4 = new RispostaPayload("Microsharkus microscopium", 0, domM1);
 
 		Risposta b1 = aService.save(bPay1);
 		Risposta b2 = aService.save(bPay2);
@@ -207,10 +207,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domM2 = dService.save(QuestionM2);
 
-		RispostaPayload bPay5 = new RispostaPayload("Toothache", false, domM2);
-		RispostaPayload bPay6 = new RispostaPayload("Polyphyodonty", true, domM2);
-		RispostaPayload bPay7 = new RispostaPayload("Dentition", false, domM2);
-		RispostaPayload bPay8 = new RispostaPayload("Sharkodontia", false, domM2);
+		RispostaPayload bPay5 = new RispostaPayload("Toothache", 0, domM2);
+		RispostaPayload bPay6 = new RispostaPayload("Polyphyodonty", 1, domM2);
+		RispostaPayload bPay7 = new RispostaPayload("Dentition", 0, domM2);
+		RispostaPayload bPay8 = new RispostaPayload("Sharkodontia", 0, domM2);
 
 		Risposta b5 = aService.save(bPay5);
 		Risposta b6 = aService.save(bPay6);
@@ -222,10 +222,10 @@ public class Runner implements CommandLineRunner {
 				"Which type of shark is known for its distinctive barbels around its mouth?", Level.MEDIO);
 		Domanda domM3 = dService.save(QuestionM3);
 
-		RispostaPayload bPay9 = new RispostaPayload("Mako Shark", false, domM3);
-		RispostaPayload bPay10 = new RispostaPayload("The bull shark (Carcharhinus leucas)", false, domM3);
-		RispostaPayload bPay11 = new RispostaPayload("Nurse Shark", true, domM3);
-		RispostaPayload bPay12 = new RispostaPayload("Goblin Shark", false, domM3);
+		RispostaPayload bPay9 = new RispostaPayload("Mako Shark", 0, domM3);
+		RispostaPayload bPay10 = new RispostaPayload("The bull shark (Carcharhinus leucas)", 0, domM3);
+		RispostaPayload bPay11 = new RispostaPayload("Nurse Shark", 1, domM3);
+		RispostaPayload bPay12 = new RispostaPayload("Goblin Shark", 0, domM3);
 
 		Risposta b9 = aService.save(bPay9);
 		Risposta b10 = aService.save(bPay10);
@@ -237,10 +237,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domM4 = dService.save(QuestionM4);
 
-		RispostaPayload bPay13 = new RispostaPayload("Smooth Hammerhead", false, domM4);
-		RispostaPayload bPay14 = new RispostaPayload("Great Hammerhead", true, domM4);
-		RispostaPayload bPay15 = new RispostaPayload("Scalloped Hammerhead", false, domM4);
-		RispostaPayload bPay16 = new RispostaPayload("Bonnethead", false, domM4);
+		RispostaPayload bPay13 = new RispostaPayload("Smooth Hammerhead", 0, domM4);
+		RispostaPayload bPay14 = new RispostaPayload("Great Hammerhead", 1, domM4);
+		RispostaPayload bPay15 = new RispostaPayload("Scalloped Hammerhead", 0, domM4);
+		RispostaPayload bPay16 = new RispostaPayload("Bonnethead", 0, domM4);
 
 		Risposta b13 = aService.save(bPay13);
 		Risposta b14 = aService.save(bPay14);
@@ -252,10 +252,10 @@ public class Runner implements CommandLineRunner {
 				"Which type of shark is often found in both saltwater and freshwater environments?", Level.MEDIO);
 		Domanda domM5 = dService.save(QuestionM5);
 
-		RispostaPayload bPay17 = new RispostaPayload("The bull shark (Carcharhinus leucas)", true, domM5);
-		RispostaPayload bPay18 = new RispostaPayload("Hammerhead Shark", false, domM5);
-		RispostaPayload bPay19 = new RispostaPayload("Great White Shark", false, domM5);
-		RispostaPayload bPay20 = new RispostaPayload("The tiger shark", false, domM5);
+		RispostaPayload bPay17 = new RispostaPayload("The bull shark (Carcharhinus leucas)", 1, domM5);
+		RispostaPayload bPay18 = new RispostaPayload("Hammerhead Shark", 0, domM5);
+		RispostaPayload bPay19 = new RispostaPayload("Great White Shark", 0, domM5);
+		RispostaPayload bPay20 = new RispostaPayload("The tiger shark", 0, domM5);
 
 		Risposta b17 = aService.save(bPay17);
 		Risposta b18 = aService.save(bPay18);
@@ -267,11 +267,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domM6 = dService.save(QuestionM6);
 
-		RispostaPayload bPay21 = new RispostaPayload("The great white shark (Carcharodon carcharias)", false, domM6);
-		RispostaPayload bPay22 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", false,
-				domM6);
-		RispostaPayload bPay23 = new RispostaPayload("The whale shark (Rhincodon typus)", false, domM6);
-		RispostaPayload bPay24 = new RispostaPayload("The tiger shark (Galeocerdo cuvier)", true, domM6);
+		RispostaPayload bPay21 = new RispostaPayload("The great white shark (Carcharodon carcharias)", 0, domM6);
+		RispostaPayload bPay22 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", 0, domM6);
+		RispostaPayload bPay23 = new RispostaPayload("The whale shark (Rhincodon typus)", 0, domM6);
+		RispostaPayload bPay24 = new RispostaPayload("The tiger shark (Galeocerdo cuvier)", 1, domM6);
 
 		Risposta b21 = aService.save(bPay21);
 		Risposta b22 = aService.save(bPay22);
@@ -283,10 +282,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domM7 = dService.save(QuestionM7);
 
-		RispostaPayload bPay25 = new RispostaPayload("The epaulette shark (Hemiscyllium ocellatum)", false, domM7);
-		RispostaPayload bPay26 = new RispostaPayload("The cookiecutter shark (Isistius brasiliensis)", true, domM7);
-		RispostaPayload bPay27 = new RispostaPayload("The sandbar shark (Carcharhinus plumbeus)", false, domM7);
-		RispostaPayload bPay28 = new RispostaPayload("The leopard shark (Triakis semifasciata)", false, domM7);
+		RispostaPayload bPay25 = new RispostaPayload("The epaulette shark (Hemiscyllium ocellatum)", 0, domM7);
+		RispostaPayload bPay26 = new RispostaPayload("The cookiecutter shark (Isistius brasiliensis)", 1, domM7);
+		RispostaPayload bPay27 = new RispostaPayload("The sandbar shark (Carcharhinus plumbeus)", 0, domM7);
+		RispostaPayload bPay28 = new RispostaPayload("The leopard shark (Triakis semifasciata)", 0, domM7);
 
 		Risposta b25 = aService.save(bPay25);
 		Risposta b26 = aService.save(bPay26);
@@ -297,10 +296,10 @@ public class Runner implements CommandLineRunner {
 		DomandaPayload QuestionM8 = new DomandaPayload("Which shark is known to walk on land?", Level.MEDIO);
 		Domanda domM8 = dService.save(QuestionM8);
 
-		RispostaPayload bPay29 = new RispostaPayload("The nurse shark (Ginglymostoma cirratum)", false, domM8);
-		RispostaPayload bPay30 = new RispostaPayload("The goblin shark (Mitsukurina owstoni) ", false, domM8);
-		RispostaPayload bPay31 = new RispostaPayload("The epaulette shark (Hemiscyllium ocellatum)", true, domM8);
-		RispostaPayload bPay32 = new RispostaPayload("The pyjama shark (Poroderma africanum)", false, domM8);
+		RispostaPayload bPay29 = new RispostaPayload("The nurse shark (Ginglymostoma cirratum)", 0, domM8);
+		RispostaPayload bPay30 = new RispostaPayload("The goblin shark (Mitsukurina owstoni) ", 0, domM8);
+		RispostaPayload bPay31 = new RispostaPayload("The epaulette shark (Hemiscyllium ocellatum)", 1, domM8);
+		RispostaPayload bPay32 = new RispostaPayload("The pyjama shark (Poroderma africanum)", 0, domM8);
 
 		Risposta b29 = aService.save(bPay29);
 		Risposta b30 = aService.save(bPay30);
@@ -312,11 +311,10 @@ public class Runner implements CommandLineRunner {
 				"Which shark uses its tail like a whip to deliver crippling blows to its prey?", Level.MEDIO);
 		Domanda domM9 = dService.save(QuestionM9);
 
-		RispostaPayload bPay33 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", false,
-				domM9);
-		RispostaPayload bPay34 = new RispostaPayload("The common thresher (Alopias vulpinus)", true, domM9);
-		RispostaPayload bPay35 = new RispostaPayload("The leopard shark (Triakis semifasciata)", false, domM9);
-		RispostaPayload bPay36 = new RispostaPayload("The frilled shark (Chlamydoselachus anguineus)", false, domM9);
+		RispostaPayload bPay33 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", 0, domM9);
+		RispostaPayload bPay34 = new RispostaPayload("The common thresher (Alopias vulpinus)", 1, domM9);
+		RispostaPayload bPay35 = new RispostaPayload("The leopard shark (Triakis semifasciata)", 0, domM9);
+		RispostaPayload bPay36 = new RispostaPayload("The frilled shark (Chlamydoselachus anguineus)", 0, domM9);
 
 		Risposta b33 = aService.save(bPay33);
 		Risposta b34 = aService.save(bPay34);
@@ -328,10 +326,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domM10 = dService.save(QuestionM10);
 
-		RispostaPayload bPay37 = new RispostaPayload("Stability and balance", true, domM10);
-		RispostaPayload bPay38 = new RispostaPayload("Steering", false, domM10);
-		RispostaPayload bPay39 = new RispostaPayload("Propulsion", false, domM10);
-		RispostaPayload bPay40 = new RispostaPayload("Capturing prey", false, domM10);
+		RispostaPayload bPay37 = new RispostaPayload("Stability and balance", 1, domM10);
+		RispostaPayload bPay38 = new RispostaPayload("Steering", 0, domM10);
+		RispostaPayload bPay39 = new RispostaPayload("Propulsion", 0, domM10);
+		RispostaPayload bPay40 = new RispostaPayload("Capturing prey", 0, domM10);
 
 		Risposta b37 = aService.save(bPay37);
 		Risposta b38 = aService.save(bPay38);
@@ -343,10 +341,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domM11 = dService.save(QuestionM11);
 
-		RispostaPayload bPay41 = new RispostaPayload("Stability and balance", true, domM11);
-		RispostaPayload bPay42 = new RispostaPayload("Steering", false, domM11);
-		RispostaPayload bPay43 = new RispostaPayload("Propulsion", false, domM11);
-		RispostaPayload bPay44 = new RispostaPayload("Capturing prey", false, domM11);
+		RispostaPayload bPay41 = new RispostaPayload("Stability and balance", 1, domM11);
+		RispostaPayload bPay42 = new RispostaPayload("Steering", 0, domM11);
+		RispostaPayload bPay43 = new RispostaPayload("Propulsion", 0, domM11);
+		RispostaPayload bPay44 = new RispostaPayload("Capturing prey", 0, domM11);
 
 		Risposta b41 = aService.save(bPay41);
 		Risposta b42 = aService.save(bPay42);
@@ -358,10 +356,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD1 = dService.save(QuestionD1);
 
-		RispostaPayload dPay1 = new RispostaPayload("Stability and balance", true, domD1);
-		RispostaPayload dPay2 = new RispostaPayload("Steering", false, domD1);
-		RispostaPayload dPay3 = new RispostaPayload("Propulsion", false, domD1);
-		RispostaPayload dPay4 = new RispostaPayload("Capturing prey", false, domD1);
+		RispostaPayload dPay1 = new RispostaPayload("Stability and balance", 1, domD1);
+		RispostaPayload dPay2 = new RispostaPayload("Steering", 0, domD1);
+		RispostaPayload dPay3 = new RispostaPayload("Propulsion", 0, domD1);
+		RispostaPayload dPay4 = new RispostaPayload("Capturing prey", 0, domD1);
 
 		Risposta d1 = aService.save(dPay1);
 		Risposta d2 = aService.save(dPay2);
@@ -373,10 +371,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD2 = dService.save(QuestionD2);
 
-		RispostaPayload dPay5 = new RispostaPayload("Stability and balance", true, domD2);
-		RispostaPayload dPay6 = new RispostaPayload("Steering", false, domD2);
-		RispostaPayload dPay7 = new RispostaPayload("Propulsion", false, domD2);
-		RispostaPayload dPay8 = new RispostaPayload("Capturing prey", false, domD2);
+		RispostaPayload dPay5 = new RispostaPayload("Stability and balance", 1, domD2);
+		RispostaPayload dPay6 = new RispostaPayload("Steering", 0, domD2);
+		RispostaPayload dPay7 = new RispostaPayload("Propulsion", 0, domD2);
+		RispostaPayload dPay8 = new RispostaPayload("Capturing prey", 0, domD2);
 
 		Risposta d5 = aService.save(dPay5);
 		Risposta d6 = aService.save(dPay6);
@@ -388,10 +386,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD3 = dService.save(QuestionM3);
 
-		RispostaPayload dPay9 = new RispostaPayload("Stability and balance", true, domD3);
-		RispostaPayload dPay10 = new RispostaPayload("Steering", false, domD3);
-		RispostaPayload dPay11 = new RispostaPayload("Propulsion", false, domD3);
-		RispostaPayload dPay12 = new RispostaPayload("Capturing prey", false, domD3);
+		RispostaPayload dPay9 = new RispostaPayload("Stability and balance", 1, domD3);
+		RispostaPayload dPay10 = new RispostaPayload("Steering", 0, domD3);
+		RispostaPayload dPay11 = new RispostaPayload("Propulsion", 0, domD3);
+		RispostaPayload dPay12 = new RispostaPayload("Capturing prey", 0, domD3);
 
 		Risposta d9 = aService.save(dPay9);
 		Risposta d10 = aService.save(dPay10);
@@ -403,10 +401,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD4 = dService.save(QuestionD4);
 
-		RispostaPayload dPay13 = new RispostaPayload("Stability and balance", true, domD4);
-		RispostaPayload dPay14 = new RispostaPayload("Steering", false, domD4);
-		RispostaPayload dPay15 = new RispostaPayload("Propulsion", false, domD4);
-		RispostaPayload dPay16 = new RispostaPayload("Capturing prey", false, domD4);
+		RispostaPayload dPay13 = new RispostaPayload("Stability and balance", 1, domD4);
+		RispostaPayload dPay14 = new RispostaPayload("Steering", 0, domD4);
+		RispostaPayload dPay15 = new RispostaPayload("Propulsion", 0, domD4);
+		RispostaPayload dPay16 = new RispostaPayload("Capturing prey", 0, domD4);
 
 		Risposta d13 = aService.save(dPay13);
 		Risposta d14 = aService.save(dPay14);
@@ -418,10 +416,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD5 = dService.save(QuestionD5);
 
-		RispostaPayload dPay17 = new RispostaPayload("Stability and balance", true, domD5);
-		RispostaPayload dPay18 = new RispostaPayload("Steering", false, domD5);
-		RispostaPayload dPay19 = new RispostaPayload("Propulsion", false, domD5);
-		RispostaPayload dPay20 = new RispostaPayload("Capturing prey", false, domD5);
+		RispostaPayload dPay17 = new RispostaPayload("Stability and balance", 1, domD5);
+		RispostaPayload dPay18 = new RispostaPayload("Steering", 0, domD5);
+		RispostaPayload dPay19 = new RispostaPayload("Propulsion", 0, domD5);
+		RispostaPayload dPay20 = new RispostaPayload("Capturing prey", 0, domD5);
 
 		Risposta d17 = aService.save(dPay17);
 		Risposta d18 = aService.save(dPay18);
@@ -433,10 +431,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD6 = dService.save(QuestionD6);
 
-		RispostaPayload dPay21 = new RispostaPayload("Stability and balance", true, domD6);
-		RispostaPayload dPay22 = new RispostaPayload("Steering", false, domD6);
-		RispostaPayload dPay23 = new RispostaPayload("Propulsion", false, domD6);
-		RispostaPayload dPay24 = new RispostaPayload("Capturing prey", false, domD6);
+		RispostaPayload dPay21 = new RispostaPayload("Stability and balance", 1, domD6);
+		RispostaPayload dPay22 = new RispostaPayload("Steering", 0, domD6);
+		RispostaPayload dPay23 = new RispostaPayload("Propulsion", 0, domD6);
+		RispostaPayload dPay24 = new RispostaPayload("Capturing prey", 0, domD6);
 
 		Risposta d21 = aService.save(dPay21);
 		Risposta d22 = aService.save(dPay22);
@@ -448,10 +446,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD7 = dService.save(QuestionD7);
 
-		RispostaPayload dPay25 = new RispostaPayload("Stability and balance", true, domD7);
-		RispostaPayload dPay26 = new RispostaPayload("Steering", false, domD7);
-		RispostaPayload dPay27 = new RispostaPayload("Propulsion", false, domD7);
-		RispostaPayload dPay28 = new RispostaPayload("Capturing prey", false, domD7);
+		RispostaPayload dPay25 = new RispostaPayload("Stability and balance", 1, domD7);
+		RispostaPayload dPay26 = new RispostaPayload("Steering", 0, domD7);
+		RispostaPayload dPay27 = new RispostaPayload("Propulsion", 0, domD7);
+		RispostaPayload dPay28 = new RispostaPayload("Capturing prey", 0, domD7);
 
 		Risposta d25 = aService.save(dPay25);
 		Risposta d26 = aService.save(dPay26);
@@ -463,10 +461,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD8 = dService.save(QuestionD8);
 
-		RispostaPayload dPay29 = new RispostaPayload("Stability and balance", true, domD8);
-		RispostaPayload dPay30 = new RispostaPayload("Steering", false, domD8);
-		RispostaPayload dPay31 = new RispostaPayload("Propulsion", false, domD8);
-		RispostaPayload dPay32 = new RispostaPayload("Capturing prey", false, domD8);
+		RispostaPayload dPay29 = new RispostaPayload("Stability and balance", 1, domD8);
+		RispostaPayload dPay30 = new RispostaPayload("Steering", 0, domD8);
+		RispostaPayload dPay31 = new RispostaPayload("Propulsion", 0, domD8);
+		RispostaPayload dPay32 = new RispostaPayload("Capturing prey", 0, domD8);
 
 		Risposta d29 = aService.save(dPay29);
 		Risposta d30 = aService.save(dPay30);
@@ -478,10 +476,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD9 = dService.save(QuestionD9);
 
-		RispostaPayload dPay33 = new RispostaPayload("Stability and balance", true, domD9);
-		RispostaPayload dPay34 = new RispostaPayload("Steering", false, domD9);
-		RispostaPayload dPay35 = new RispostaPayload("Propulsion", false, domD9);
-		RispostaPayload dPay36 = new RispostaPayload("Capturing prey", false, domD9);
+		RispostaPayload dPay33 = new RispostaPayload("Stability and balance", 1, domD9);
+		RispostaPayload dPay34 = new RispostaPayload("Steering", 0, domD9);
+		RispostaPayload dPay35 = new RispostaPayload("Propulsion", 0, domD9);
+		RispostaPayload dPay36 = new RispostaPayload("Capturing prey", 0, domD9);
 
 		Risposta d33 = aService.save(dPay33);
 		Risposta d34 = aService.save(dPay34);
@@ -493,10 +491,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD10 = dService.save(QuestionD10);
 
-		RispostaPayload dPay37 = new RispostaPayload("Stability and balance", true, domD10);
-		RispostaPayload dPay38 = new RispostaPayload("Steering", false, domD10);
-		RispostaPayload dPay39 = new RispostaPayload("Propulsion", false, domD10);
-		RispostaPayload dPay40 = new RispostaPayload("Capturing prey", false, domD10);
+		RispostaPayload dPay37 = new RispostaPayload("Stability and balance", 1, domD10);
+		RispostaPayload dPay38 = new RispostaPayload("Steering", 0, domD10);
+		RispostaPayload dPay39 = new RispostaPayload("Propulsion", 0, domD10);
+		RispostaPayload dPay40 = new RispostaPayload("Capturing prey", 0, domD10);
 
 		Risposta d37 = aService.save(dPay37);
 		Risposta d38 = aService.save(dPay38);
@@ -508,10 +506,10 @@ public class Runner implements CommandLineRunner {
 				Level.MEDIO);
 		Domanda domD11 = dService.save(QuestionD11);
 
-		RispostaPayload dPay41 = new RispostaPayload("Stability and balance", true, domD11);
-		RispostaPayload dPay42 = new RispostaPayload("Steering", false, domD11);
-		RispostaPayload dPay43 = new RispostaPayload("Propulsion", false, domD11);
-		RispostaPayload dPay44 = new RispostaPayload("Capturing prey", false, domD11);
+		RispostaPayload dPay41 = new RispostaPayload("Stability and balance", 1, domD11);
+		RispostaPayload dPay42 = new RispostaPayload("Steering", 0, domD11);
+		RispostaPayload dPay43 = new RispostaPayload("Propulsion", 0, domD11);
+		RispostaPayload dPay44 = new RispostaPayload("Capturing prey", 0, domD11);
 
 		Risposta d41 = aService.save(dPay41);
 		Risposta d42 = aService.save(dPay42);

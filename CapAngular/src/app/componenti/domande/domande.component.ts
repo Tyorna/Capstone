@@ -43,7 +43,7 @@ export class DomandeComponent implements OnInit {
     console.log('Selected Answer:', selectedAnswer);
     console.log('Is Correct?', selectedAnswer.isCorrect);
 
-    if (selectedAnswer.isCorrect) {
+    if (selectedAnswer.isCorrect == 1) {
       console.log("The answer is correct");
       this.correctScore++;
     } else {

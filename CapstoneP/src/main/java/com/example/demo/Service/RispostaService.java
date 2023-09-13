@@ -21,7 +21,7 @@ public class RispostaService {
 	RispostaRepository aRepository;
 
 	public Risposta save(RispostaPayload body) {
-		Risposta newAnswer = new Risposta(body.getText(), body.isCorrect(), body.getQuestion());
+		Risposta newAnswer = new Risposta(body.getText(), body.getIsCorrect(), body.getQuestion());
 		return aRepository.save(newAnswer);
 	}
 
@@ -42,7 +42,7 @@ public class RispostaService {
 	public Risposta findByIdAndUpdate(UUID id, RispostaPayload body) throws NotFoundException {
 		Risposta found = this.findById(id);
 		found.setText(body.getText());
-		found.setCorrect(body.isCorrect());
+		found.setIsCorrect(body.getIsCorrect());
 		found.setQuestion(body.getQuestion());
 		return aRepository.save(found);
 	}

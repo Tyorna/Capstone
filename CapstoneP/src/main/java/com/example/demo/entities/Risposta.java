@@ -24,13 +24,13 @@ public class Risposta {
 	@GeneratedValue
 	private UUID id;
 	private String text;
-	private boolean isCorrect;
+	private int isCorrect;
 	@ManyToOne
 	@JoinColumn(name = "domanda_id")
 	@JsonIgnore
 	private Domanda question;
 
-	public Risposta(String text, boolean isCorrect, Domanda question) {
+	public Risposta(String text, int isCorrect, Domanda question) {
 		this.text = text;
 		this.isCorrect = isCorrect;
 		this.question = question;
