@@ -15,6 +15,6 @@ export class LevelComponent implements OnInit {
   ngOnInit(): void {
   }
   startTest() {
-    this.router.navigate(['/domande/by-level/', this.selectedLevel]);
+    this.router.navigate(['domande/by-level/', this.selectedLevel]);
   }
 }

@@ -52,8 +52,7 @@ public class DomandaService {
 		qRepository.delete(found);
 	}
 
-	public Page<Domanda> findByLevel(Level level, int page, int size, String sort) {
-		Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
-		return qRepository.findByLevel(level, pageable);
+	public List<Domanda> findByLevel(Level level) {
+		return qRepository.findByLevel(level);
 	}
 }

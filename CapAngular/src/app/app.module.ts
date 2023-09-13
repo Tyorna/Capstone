@@ -16,18 +16,21 @@ import { DettagliutenteComponent } from './componenti/dettagliutente/dettagliute
 import { AuthGuard } from './componenti/auth/auth-int/auth.guard';
 import { DomandeComponent } from './componenti/domande/domande.component';
 import { LevelComponent } from './componenti/level/level.component';
+import { RisultatiComponent } from './componenti/risultati/risultati.component';
 
 const rotte: Route[] = [
   {
     path: 'test',
     component: LevelComponent,
     canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'domande/by-level/:level', //per arrivare ai dettagli dell'utente, è una rotta con parametri
-        component: DettagliutenteComponent,
-      },
-    ],
+  },
+  {
+    path: 'domande/by-level/:level',
+    component: DomandeComponent,
+  },
+  {
+    path: 'risultati',
+    component: RisultatiComponent,
   },
   {
     path: 'profilo',
@@ -70,6 +73,7 @@ const rotte: Route[] = [
     HomeComponent,
     DomandeComponent,
     LevelComponent,
+    RisultatiComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,8 +86,8 @@ const rotte: Route[] = [
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    }
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

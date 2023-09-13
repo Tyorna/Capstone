@@ -15,8 +15,8 @@ export class TestService {
   constructor(private http: HttpClient) { }
 
    //Prendo le domande per livello
-  getDomandeByLivello(level: string) {
-    return this.http.get(`${this.baseURL}/domande/by-level/${level}`);
+  getDomandeByLivello(level: string): Observable<Domande[]> {
+    return this.http.get<Domande[]>(`${this.baseURL}domande/by-level/${level}`);
   }
 
 }

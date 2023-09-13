@@ -1,15 +1,43 @@
-<div class="father">
-  <div class="container text-center">
-    <div *ngFor="let question of questions">
-      <h2>{{ question.text }}</h2>
-      <ul>
-        <li *ngFor="let answer of question.answers">
+<div class="father mt-5">
+  <div class="container mt-5">
+    <div class="question-container mt-5">
+      <!-- Display the current question text -->
+      <h2 class="mt-5">Question {{ currentQuestionIndex + 1 }}</h2>
+      <p>{{ questions[currentQuestionIndex].text }}</p>
+      <p>Selected Answer Index: {{ selectedAnswerIndex }}</p>
+
+      <!-- Display answer choices -->
+      <div class="answer-options">
+        <div *ngFor="let answer of questions[currentQuestionIndex].answers; let i = index">
           <label>
-            <input type="radio" name="answer" [value]="answer.id">
+            <input
+              type="radio"
+              name="answerOption"
+              [value]="i"
+              [(ngModel)]="selectedAnswerIndex"
+              (change)="selectedQuestion(i)"
+            />
             {{ answer.text }}
           </label>
-        </li>
-      </ul>
+          <p>Maledizione la risposta è:</p>
+          <p>
+            Maledizione la risposta è:
+            <span [ngClass]="{'correct-answer': answer.isCorrect, 'incorrect-answer': !answer.isCorrect}">
+              {{ answer.isCorrect ? 'Correct' : 'Incorrect' }}
+            </span>
+          </p>
+
+          <p>{{ answer.id }}</p>
+        </div>
+
+
+      </div>
+
+      <div class="navigation-buttons">
+        <button (click)="nextQuestion()">
+          Next
+        </button>
+      </div>
     </div>
   </div>
 </div>

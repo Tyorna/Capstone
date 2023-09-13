@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,10 +59,9 @@ public class DomandaController {
 	}
 
 	@GetMapping("/by-level/{level}")
-	public Page<Domanda> getQuestionsByLevel(@PathVariable String level, @RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "10") int size, @RequestParam(defaultValue = "id") String sortBy) {
+	public List<Domanda> getQuestionsByLevel(@PathVariable String level) {
 
 		Level questionLevel = Level.valueOf(level);
-		return qService.findByLevel(questionLevel, page, size, sortBy);
+		return qService.findByLevel(questionLevel);
 	}
 }
