@@ -1,27 +1,29 @@
 <div class="father">
-  <div class="container text-center">
-    <div class="level-selection">
-      <h2>Select a Level</h2>
-      <div>
-        <label>
-          <input type="radio" name="level" value="BASE" [(ngModel)]="selectedLevel" />
-          Easy
-        </label>
-      </div>
+  <div class="card text-center shadow-lg mb-5 bg-info bg-opacity-75 rounded-4" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title mb-3 fw-semibold">Select a Level</h5>
+      <div class="level-selection text-start">
+        <div class="mb-2 centro">
+          <label>
+            <input type="radio" name="level" value="BASE" [(ngModel)]="selectedLevel" />
+            Easy
+          </label>
+        </div>
 
-      <div>
-        <label>
-          <input type="radio" name="level" value="MEDIO" [(ngModel)]="selectedLevel" />
-          Medium
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="radio" name="level" value="DIFFICILE" [(ngModel)]="selectedLevel" />
-          Hard
-        </label>
+        <div class="mb-2 centro">
+          <label >
+            <input type="radio" name="level" value="MEDIO" [(ngModel)]="selectedLevel" />
+            Medium
+          </label>
+        </div>
+        <div class="mb-2 centro">
+          <label>
+            <input type="radio" name="level" value="DIFFICILE" [(ngModel)]="selectedLevel" />
+            Hard
+          </label>
+        </div>
       </div>
     </div>
-    <button class="btn btn-success" (click)="startTest()">Start Test</button>
+    <button class="btn btn-success mb-2 rounded-pill w-75 m-auto" (click)="startTest()">Start Test</button>
   </div>
 </div>

@@ -58,7 +58,7 @@ export class DomandeComponent implements OnInit {
       return;
     }
 
-    if (this.currentQuestionIndex <= this.questions.length - 1) {
+    if (this.currentQuestionIndex < this.questions.length - 1) {
       this.currentQuestionIndex++;
       this.selectedAnswerIndex = -1;
       console.log('Index', this.currentQuestionIndex)
