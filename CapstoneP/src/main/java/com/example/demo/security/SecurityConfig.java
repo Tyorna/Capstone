@@ -37,6 +37,7 @@ public class SecurityConfig {
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/risposte/**").authenticated());
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/domande/**").authenticated());
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/users/**").authenticated());
+		http.authorizeHttpRequests(auth -> auth.requestMatchers("/risultati/**").authenticated());
 
 		http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 		http.addFilterBefore(corsFilter, JWTAuthFilter.class);

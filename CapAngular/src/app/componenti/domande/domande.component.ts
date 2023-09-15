@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Domande } from 'src/app/models/domande';
 import { TestService } from 'src/app/services/test.service';
+import { RisultatiService } from 'src/app/services/risultati.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../auth/auth-int/auth.service';
+
 
 @Component({
   selector: 'app-domande',
@@ -16,11 +21,15 @@ export class DomandeComponent implements OnInit {
   selectedAnswerIndex: number = -1;
   correctScore: number = 0;
   score: number = 0;
+  baseURL = environment.baseURL;
 
   constructor(
     private route: ActivatedRoute,
     private testService: TestService,
-    private router: Router
+    private risultatiService: RisultatiService,
+    private router: Router,
+    private http: HttpClient,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -67,6 +76,17 @@ export class DomandeComponent implements OnInit {
       console.log('Reached the end of questions.');
       const totalQuestions = this.questions.length;
       const correctAnswers = this.correctScore;
+      const score = (correctAnswers / totalQuestions) * 100;
+      this.risultatiService.aggiungiRisultato(score, this.selectedLevel).subscribe(
+        (response) => {
+          console.log('Result saved successfully', response);
+          // Redirect or show a success message as needed
+        },
+        (error) => {
+          console.error('Error saving result', error);
+          // Handle the error
+        }
+      );
       this.router.navigate(['risultati'], {
         queryParams: {
           totalQuestions,

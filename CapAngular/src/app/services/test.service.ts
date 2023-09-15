@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DomandeComponent } from '../componenti/domande/domande.component';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
