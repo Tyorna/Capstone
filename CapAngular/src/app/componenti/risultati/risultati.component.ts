@@ -21,6 +21,7 @@ export class RisultatiComponent implements OnInit {
 
       // Calculate the user's score as a percentage
       this.score = (this.correctAnswers / this.totalQuestions) * 100;
+
     });
   }
 }

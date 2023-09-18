@@ -14,11 +14,12 @@ export class RisultatiService {
 
   constructor(private http: HttpClient) { }
 
-  aggiungiRisultato(userID: string, correctAnswers: number, level: string) {
-    const dati: Risultati = {
-      id: '',
-      score: correctAnswers,
-      level: level
+  aggiungiRisultato(userId: string, correctAnswers: number, level: string, score: number): Observable<any> {
+    const dati = {
+      userId: userId,
+      correctAnswers: correctAnswers,
+      level: level,
+      score: score
     };
     return this.http.post<Risultati>(`${this.baseURL}risultati`, dati);
   }

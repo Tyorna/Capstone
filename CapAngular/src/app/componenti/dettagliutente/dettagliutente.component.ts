@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthInt } from '../auth/auth-int..interface';
 import { AuthService } from '../auth/auth-int/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Utente } from 'src/app/models/utente.interface'; //proviamo ad importare l'interfaccia utente normale.
 import { UtentiService } from 'src/app/services/utenti.service'; //proviamo ad importare il service utente normale.
 import { NgClass } from '@angular/common';

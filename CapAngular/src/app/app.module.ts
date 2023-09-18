@@ -69,6 +69,7 @@ const rotte: Route[] = [
     ProfileComponent,
     LoginComponent,
     RegistrazioneComponent,
+    DettagliutenteComponent,
     ErrorPageComponent,
     HomeComponent,
     DomandeComponent,

@@ -47,17 +47,18 @@ Li sicriviamo in quella variabile. Ne facciamo poi il console.log per controllar
 Post che contemporaneamente legge e scrive. Va a leggere la corrispondenza, se c'è cede il token e va a scrivere poi nelle nostre variabili (authSubj) non nel json.
 This.autoLogout ancora non spiegato.*/
 
-restore() {
+restore(): boolean {
     const user = localStorage.getItem('user');
     if (!user) {
-        return;
+        return false;
     }
     const userData: AuthInt = JSON.parse(user);
     if (this.jwtHelper.isTokenExpired(userData.accessToken)) {
-        return;
+        return false;
     }
     this.authSubj.next(userData);
     this.autoLogout(userData);
+    return true
 }
 
 /*Recuperare l'user dal localStorage. Se non c'e non succede nulla.
@@ -115,6 +116,20 @@ GLi abbiamo detto quando è finito il tempo fai il logout. Questo metodo lo chia
 
 recuperaUtente(id: number) {
   return this.http.get<AuthInt>(`${this.baseURL}users/${id}`);
+}
+
+recuperaUtenteAttuale(): AuthInt | null {
+  return this.authSubj.value;
+}
+
+recuperaId(): string {
+  const user = this.authSubj.value;
+
+  if (user && user.id) {
+    return user.id;
+  } else {
+    return '';
+  }
 }
 
 private errors(err: any) {

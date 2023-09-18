@@ -29,17 +29,18 @@ public class Risultati {
 	private UUID id;
 
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	@JsonIgnore
 	private User user;
-
-	private int score;
+	private int correctAnswers;
+	private double score;
 	@Enumerated(EnumType.STRING)
 	private Level level;
 	private LocalDateTime timestamp;
 
-	public Risultati(User user, int score, LocalDateTime timestamp, Level level) {
+	public Risultati(User user, int correctAnswers, double score, LocalDateTime timestamp, Level level) {
 		this.user = user;
+		this.correctAnswers = correctAnswers;
 		this.score = score;
 		this.timestamp = timestamp;
 		this.level = level;

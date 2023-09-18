@@ -24,11 +24,12 @@ public class RisultatiService {
 	@Autowired
 	private UserService userService;
 
-	public Risultati saveRisultati(RisultatiPayload body, UUID userId) {
-		User user = userService.findById(userId);
+	public Risultati saveRisultati(RisultatiPayload body) {
+		User user = userService.findById(body.getUserId());
 		if (user != null) {
 			LocalDateTime timestamp = LocalDateTime.now();
-			Risultati Risultati = new Risultati(user, body.getScore(), timestamp, body.getLevel());
+			Risultati Risultati = new Risultati(user, body.getCorrectAnswers(), body.getScore(), timestamp,
+					body.getLevel());
 
 			return risultatiRepository.save(Risultati);
 		}
@@ -42,6 +43,7 @@ public class RisultatiService {
 
 	public Risultati findByIdAndUpdate(UUID id, RisultatiPayload body) {
 		Risultati found = this.getRisultatiById(id);
+		found.setCorrectAnswers(body.getCorrectAnswers());
 		found.setScore(body.getScore());
 		found.setLevel(body.getLevel());
 		found.setTimestamp(LocalDateTime.now());

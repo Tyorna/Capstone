@@ -75,26 +75,43 @@ export class DomandeComponent implements OnInit {
     } else {
       console.log('Reached the end of questions.');
       const totalQuestions = this.questions.length;
-      const correctAnswers = this.correctScore;
+    const correctAnswers = this.correctScore;
+    const selectedLevel = this.selectedLevel;
+    const user = this.authService.recuperaUtenteAttuale();
+    if (user) {
       const score = (correctAnswers / totalQuestions) * 100;
-      this.risultatiService.aggiungiRisultato(score, this.selectedLevel).subscribe(
-        (response) => {
-          console.log('Result saved successfully', response);
-          // Redirect or show a success message as needed
-        },
-        (error) => {
-          console.error('Error saving result', error);
-          // Handle the error
-        }
-      );
-      this.router.navigate(['risultati'], {
-        queryParams: {
-          totalQuestions,
-          correctAnswers
-        }}
-     );
-    }
+console.log('Utente trovato', user.id, user.email);
+
+const  nuovoId = user.id.replace(/"/g, '');
+
+this.risultatiService.aggiungiRisultato(nuovoId, correctAnswers, selectedLevel, score).subscribe(
+  (response) => {
+    console.log('nuovoId:', nuovoId);
+console.log('correctAnswers:', correctAnswers);
+console.log('selectedLevel:', selectedLevel);
+console.log('score:', score);
+    console.log('Result saved successfully', response);
+  },
+  (error) => {
+    console.log('nuovoId:', nuovoId);
+console.log('correctAnswers:', correctAnswers);
+console.log('selectedLevel:', selectedLevel);
+console.log('score:', score);
+    console.error('Error saving result', error);
   }
+);
+    } else {
+      console.log('User is not logged in. Cannot save result.');
+    }
+
+    this.router.navigate(['risultati'], {
+      queryParams: {
+        totalQuestions,
+        correctAnswers
+      }}
+    );
+  }
+}
 
   calculateCorrectAnswers(): number {
     let correctCount = 0;
