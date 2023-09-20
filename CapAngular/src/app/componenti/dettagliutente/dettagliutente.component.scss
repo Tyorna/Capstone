@@ -7,3 +7,14 @@
   border: 2px dotted rgb(17, 0, 255);
   box-shadow: 1px 1px 16px black;
 }
+
+.card{
+  width: 70%;
+  border: 2px solid black;
+  box-shadow: 1px 1px 16px black;
+  background-color: #c3b57c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

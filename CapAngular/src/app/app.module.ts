@@ -17,6 +17,7 @@ import { AuthGuard } from './componenti/auth/auth-int/auth.guard';
 import { DomandeComponent } from './componenti/domande/domande.component';
 import { LevelComponent } from './componenti/level/level.component';
 import { RisultatiComponent } from './componenti/risultati/risultati.component';
+import { GradesComponent } from './componenti/grades/grades.component';
 
 const rotte: Route[] = [
   {
@@ -40,6 +41,10 @@ const rotte: Route[] = [
       {
         path: 'dettagli/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
         component: DettagliutenteComponent,
+      },
+      {
+        path: 'grades/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
+        component: GradesComponent,
       },
     ],
   },
@@ -75,6 +80,7 @@ const rotte: Route[] = [
     DomandeComponent,
     LevelComponent,
     RisultatiComponent,
+    GradesComponent,
   ],
   imports: [
     BrowserModule,

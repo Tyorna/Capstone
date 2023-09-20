@@ -6,4 +6,5 @@ export interface Risultati {
    score: number;
    level: string;
    user: Utente;
+   timestamp: Date;
 }
