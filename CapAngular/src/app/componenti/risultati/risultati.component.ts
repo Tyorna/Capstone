@@ -20,7 +20,7 @@ export class RisultatiComponent implements OnInit {
       this.correctAnswers = +params['correctAnswers']; // Convert to number
 
       // Calculate the user's score as a percentage
-      this.score = (this.correctAnswers / this.totalQuestions) * 100;
+      this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100 * 100) / 100;
 
     });
   }

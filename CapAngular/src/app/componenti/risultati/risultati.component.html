@@ -1,10 +1,107 @@
-<div class="father">
-  <div class="container">
-    <div class="result-container">
-      <h1>Your Test Result</h1>
-      <p>Total Questions: {{ totalQuestions }}</p>
-      <p>Correct Answers: {{ correctAnswers }}</p>
-      <p>Score: {{ score }}%</p>
+<div class="father py-5">
+  <div class="py-5 text-center">
+    <h1 class="w-100 d-none d-sm-block">Your Test Result:</h1>
+    <div class="low-score" *ngIf="score < 50">
+      <div class="card text-center">
+        <div>
+          <div class="card-body d-flex justify-content-around">
+            <div class="testo d-flex align-items-center justify-content-center flex-column">
+              <h5 class="card-title">Grades</h5>
+              <hr class="w-50">
+              <h6 class="card-subtitle mb-2 text-body-secondary">Your score is below 50%. You can do better!</h6>
+              <hr class="w-50">
+              <p class="card-text">Total Questions: <span> {{ totalQuestions }} </span></p>
+              <hr class="w-50">
+              <p class="card-text">Correct Answers: <span>{{ correctAnswers }}</span></p>
+              <hr class="w-50">
+              <p class="card-text">Score: <span>{{ score }}%</span></p>
+              <hr class="w-50">
+              <img
+                src="../../../assets/img/kisspng-computer-icons-hello-kitty-nail-salon-clip-art-failed-5b46dd7b4ea699.7164811115313708753222.png"
+                class="grade">
+              <img
+                src="../../../assets/img/kisspng-personal-memoirs-of-ulysses-s-grant-signature-ame-transparent-signatures-grant-transparent-amp-png-5cd98ffabcf2d1.4846741315577620427739.png"
+                class=" firma d-block d-sm-none w-25">
+            </div>
+            <div class="d-none d-sm-block d-inline-flex position-relative">
+              <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                <img src="../../../assets/img/transparent-shark-5e8fd1571fd850.8525057415864835431304.png" class="logo">
+                <img
+                  src="../../../assets/img/kisspng-personal-memoirs-of-ulysses-s-grant-signature-ame-transparent-signatures-grant-transparent-amp-png-5cd98ffabcf2d1.4846741315577620427739.png"
+                  class="firma position-absolute bottom-0 end-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="high-score" *ngIf="score >= 50 && score < 75">
+      <div class="card text-center">
+        <div>
+          <div class="card-body d-flex justify-content-around">
+            <div class="testo d-flex align-items-center justify-content-center flex-column">
+              <h5 class="card-title">Grades</h5>
+              <hr class="w-50">
+              <h6 class="card-subtitle mb-2 text-body-secondary">Congratulations! You passed your exam!</h6>
+              <hr class="w-50">
+              <p class="card-text">Total Questions: <span> {{ totalQuestions }} </span></p>
+              <hr class="w-50">
+              <p class="card-text">Correct Answers: <span>{{ correctAnswers }}</span></p>
+              <hr class="w-50">
+              <p class="card-text">Score: <span>{{ score }}%</span></p>
+              <hr class="w-50">
+              <img
+                src="../../../assets/img/kisspng-bail-2-go-orlando-orange-county-bail-bonds-gradi-dallas-cowboys-clipart-round-cap-dallas-cowboys-r-5bd0c86caa79f5.7128797815404094526983.png"
+                class="grade">
+              <img
+                src="../../../assets/img/kisspng-personal-memoirs-of-ulysses-s-grant-signature-ame-transparent-signatures-grant-transparent-amp-png-5cd98ffabcf2d1.4846741315577620427739.png"
+                class=" firma d-block d-sm-none w-25">
+            </div>
+            <div class="d-none d-sm-block d-inline-flex position-relative">
+              <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                <img src="../../../assets/img/transparent-shark-5e8fd1571fd850.8525057415864835431304.png" class="logo">
+                <img
+                  src="../../../assets/img/kisspng-personal-memoirs-of-ulysses-s-grant-signature-ame-transparent-signatures-grant-transparent-amp-png-5cd98ffabcf2d1.4846741315577620427739.png"
+                  class="firma position-absolute bottom-0 end-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="high-score" *ngIf="score >= 75">
+      <div class="card text-center">
+        <div>
+          <div class="card-body d-flex justify-content-around">
+            <div class="testo d-flex align-items-center justify-content-center flex-column">
+              <h5 class="card-title">Grades</h5>
+              <hr class="w-50">
+              <h6 class="card-subtitle mb-2 text-body-secondary">Congratulations! Your score is 75% or higher!</h6>
+              <hr class="w-50">
+              <p class="card-text">Total Questions: <span> {{ totalQuestions }} </span></p>
+              <hr class="w-50">
+              <p class="card-text">Correct Answers: <span>{{ correctAnswers }}</span></p>
+              <hr class="w-50">
+              <p class="card-text">Score: <span>{{ score }}%</span></p>
+              <hr class="w-50">
+              <img
+                src="../../../assets/img/kisspng-image-letter-photograph-foccacia-cu-parmezan-si-mozzarella-restautant-ar-5b751c73ef3ab1.6630338915344016519799.png"
+                class="grade">
+              <img
+                src="../../../assets/img/kisspng-personal-memoirs-of-ulysses-s-grant-signature-ame-transparent-signatures-grant-transparent-amp-png-5cd98ffabcf2d1.4846741315577620427739.png"
+                class=" firma d-block d-sm-none w-25">
+            </div>
+            <div class="d-none d-sm-block d-inline-flex position-relative">
+              <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                <img src="../../../assets/img/transparent-shark-5e8fd1571fd850.8525057415864835431304.png" class="logo">
+                <img
+                  src="../../../assets/img/kisspng-personal-memoirs-of-ulysses-s-grant-signature-ame-transparent-signatures-grant-transparent-amp-png-5cd98ffabcf2d1.4846741315577620427739.png"
+                  class="firma position-absolute bottom-0 end-0">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
