@@ -22,6 +22,14 @@ export class DomandeComponent implements OnInit {
   correctScore: number = 0;
   score: number = 0;
   baseURL = environment.baseURL;
+  remainingTime!: number;
+  timerInterval: any;
+  textLoaded: boolean = false;
+  isCurrentAnswerCorrect: boolean | null = null;
+  isAnswerSelected: boolean = false;
+  lastClickedAnswerIndex: number | null = null;
+  lastClickedAnswerCorrect: boolean | null = null;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +41,7 @@ export class DomandeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+      this.textLoaded = true;
     this.route.params.subscribe((params) => {
       this.selectedLevel = params['level'];
       this.loadQuestions();
@@ -43,6 +52,9 @@ export class DomandeComponent implements OnInit {
     this.testService.getDomandeByLivello(this.selectedLevel).subscribe((data) => {
       this.questions = data;
       console.log('Loaded questions:', this.questions);
+      this.textLoaded = true;
+      this.setInitialTime();
+      this.runTimer();
     });
   }
 
@@ -51,17 +63,30 @@ export class DomandeComponent implements OnInit {
     const selectedAnswer = currentQuestion.answers[selectedIndex];
     console.log('Selected Answer:', selectedAnswer);
     console.log('Is Correct?', selectedAnswer.isCorrect);
+    const correctAnswerIndex = currentQuestion.answers.findIndex((answer) => answer.isCorrect === 1);
 
-    if (selectedAnswer.isCorrect == 1) {
+    if (selectedAnswer.isCorrect === 1) {
       console.log("The answer is correct");
       this.correctScore++;
+      this.isCurrentAnswerCorrect = true;
     } else {
       console.log("The answer is incorrect");
+      this.isCurrentAnswerCorrect = false;
+      this.lastClickedAnswerIndex = selectedIndex;
+      this.lastClickedAnswerCorrect = false;
     }
-    this.nextQuestion();
+
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 1500);
   }
 
   nextQuestion() {
+    this.isAnswerSelected = false;
+    clearInterval(this.timerInterval);
+    this.setInitialTime();
+        this.runTimer();
+        this.isAnswerSelected = false;
     if ( this.questions.length === 0) {
       console.log('No questions loaded.');
       return;
@@ -125,6 +150,47 @@ console.log('score:', score);
     }
 
     return correctCount;
+  }
+
+  setInitialTime() {
+    switch (this.selectedLevel) {
+      case 'BASE':
+        this.remainingTime = 30;
+        break;
+      case 'MEDIO':
+        this.remainingTime = 40;
+        break;
+      case 'DIFFICILE':
+        this.remainingTime = 50;
+        break;
+      default:
+        this.remainingTime = 30;
+        break;
+    }
+  }
+
+  runTimer() {
+    clearInterval(this.timerInterval);
+    const circle = document.querySelector('.circle-progress') as HTMLElement;
+    const circumference = parseFloat(getComputedStyle(circle).getPropertyValue('stroke-dasharray'));
+
+    this.timerInterval = setInterval(() => {
+      if (this.remainingTime <= 0) {
+        clearInterval(this.timerInterval);
+        this.nextQuestion();
+        this.setInitialTime();
+        this.runTimer();
+      } else {
+        const progress = ((30 - this.remainingTime) / 30) * circumference;
+        circle.style.strokeDashoffset = `${circumference - progress}`;
+        this.remainingTime--;
+      }
+    }, 1000);
+  }
+
+  checkIfCorrectAnswer(answerIndex: number): boolean {
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+    return currentQuestion.answers[answerIndex].isCorrect === 1;
   }
 }
 

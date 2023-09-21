@@ -1,21 +1,52 @@
-<div class="father mt-5">
-  <div class="card text-center bg-info rounded" style="width: 18rem;">
-    <div class="card-body mb-2">
-      <h5 class="card-title mb-3">Question {{ currentQuestionIndex + 1 }}</h5>
-      <div class="p-3 border-danger border-top mb-0">
-        <p class="mb-0">{{ questions[currentQuestionIndex].text }}</p>
-      </div>
-      <div class="answer-options border-top border-danger pt-3">
-        <div *ngFor="let answer of questions[currentQuestionIndex].answers; let i = index">
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn-purple btn-outline-purple rounded-pill py-2 px-3 m-2 fw-semibold" [class.active]="selectedAnswerIndex === i">
-              <input class="text-danger" type="radio" name="answerOption" style="display: none" [value]="i" [(ngModel)]="selectedAnswerIndex"
-                (change)="selectedQuestion(i)" />
-              {{ answer.text }}
-            </label>
+<ng-container *ngIf="textLoaded; then domande; else loading"></ng-container>
+<ng-template #domande>
+  <div class="father mt-5">
+    <div class="timer text-center">
+      <svg class="countdown-circle" width="145" height="145" viewBox="0 0 145 145">
+        <circle class="circle-shadow d-none d-sm-block" cx="70" cy="70" r="64"></circle>
+        <circle class="circle-bg d-none d-sm-block" cx="70" cy="70" r="64"></circle>
+        <circle class="circle-progress d-none d-sm-block" cx="70" cy="70" r="64"></circle>
+        <text x="70" y="45" class="circle-text d-none d-sm-block" text-anchor="middle"
+          dominant-baseline="middle">SECONDS</text>
+        <text x="70" y="70" class="circle-text fs-1 fw-bold" text-anchor="middle" dominant-baseline="middle">{{
+          remainingTime }}</text>
+        <text x="70" y="95" class="circle-text d-none d-sm-block" text-anchor="middle"
+          dominant-baseline="middle">REMAINING</text>
+      </svg>
+    </div>
+
+
+    <div class="card text-center bg-info rounded">
+      <div class="card-body mb-2">
+        <h5 class="card-title mb-3">Question {{ currentQuestionIndex + 1 }}</h5>
+        <div class="p-3 border-danger border-top mb-0">
+          <p class="mb-0">{{ questions[currentQuestionIndex].text }}</p>
+        </div>
+        <div class="answer-options border-top border-danger pt-3">
+          <div *ngFor="let answer of questions[currentQuestionIndex].answers; let i = index">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn-purple btn-outline-purple rounded-pill py-2 px-3 m-2 fw-semibold"
+                [class.active]="selectedAnswerIndex === i"
+                [class.correct-answer]="isCurrentAnswerCorrect && checkIfCorrectAnswer(i)"
+                [class.wrong-answer]="!isCurrentAnswerCorrect && lastClickedAnswerIndex === i && !lastClickedAnswerCorrect">
+                <input class="text-danger" type="radio" name="answerOption" style="display: none" [value]="i"
+                  [(ngModel)]="selectedAnswerIndex" (change)="selectedQuestion(i)" />
+                {{ answer.text }}
+              </label>
+
+
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
+<ng-template #loading>
+  <div class="father mt-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>
