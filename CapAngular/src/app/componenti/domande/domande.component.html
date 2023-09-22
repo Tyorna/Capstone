@@ -27,16 +27,16 @@
             <div class="btn-group" data-toggle="buttons">
               <label class="btn-purple btn-outline-purple rounded-pill py-2 px-3 m-2 fw-semibold"
                 [class.active]="selectedAnswerIndex === i"
-                [class.correct-answer]="isCurrentAnswerCorrect && checkIfCorrectAnswer(i)"
-                [class.wrong-answer]="!isCurrentAnswerCorrect && lastClickedAnswerIndex === i && !lastClickedAnswerCorrect">
+                [class.correct-answer]="isCurrentAnswerCorrect === true  && selectedAnswerIndex === i"
+                [class.wrong-answer]="isCurrentAnswerNotCorrect === true && selectedAnswerIndex === i"
+                [ngClass]="{'correct-answer': i === correctAnswerIndex}">
                 <input class="text-danger" type="radio" name="answerOption" style="display: none" [value]="i"
                   [(ngModel)]="selectedAnswerIndex" (change)="selectedQuestion(i)" />
                 {{ answer.text }}
               </label>
-
-
             </div>
           </div>
+
 
         </div>
       </div>

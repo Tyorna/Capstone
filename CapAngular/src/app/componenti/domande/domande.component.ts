@@ -25,11 +25,9 @@ export class DomandeComponent implements OnInit {
   remainingTime!: number;
   timerInterval: any;
   textLoaded: boolean = false;
-  isCurrentAnswerCorrect: boolean | null = null;
-  isAnswerSelected: boolean = false;
-  lastClickedAnswerIndex: number | null = null;
-  lastClickedAnswerCorrect: boolean | null = null;
-
+  isCurrentAnswerCorrect: boolean = false;
+  isCurrentAnswerNotCorrect: boolean  = false;
+  correctAnswerIndex: number | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -63,17 +61,16 @@ export class DomandeComponent implements OnInit {
     const selectedAnswer = currentQuestion.answers[selectedIndex];
     console.log('Selected Answer:', selectedAnswer);
     console.log('Is Correct?', selectedAnswer.isCorrect);
-    const correctAnswerIndex = currentQuestion.answers.findIndex((answer) => answer.isCorrect === 1);
 
-    if (selectedAnswer.isCorrect === 1) {
+
+    if (selectedAnswer.isCorrect == 1) {
       console.log("The answer is correct");
       this.correctScore++;
       this.isCurrentAnswerCorrect = true;
     } else {
+      this.isCurrentAnswerNotCorrect = true;
       console.log("The answer is incorrect");
-      this.isCurrentAnswerCorrect = false;
-      this.lastClickedAnswerIndex = selectedIndex;
-      this.lastClickedAnswerCorrect = false;
+      this.correctAnswerIndex = currentQuestion.answers.findIndex(answer => answer.isCorrect === 1);
     }
 
     setTimeout(() => {
@@ -81,12 +78,15 @@ export class DomandeComponent implements OnInit {
     }, 1500);
   }
 
+
   nextQuestion() {
-    this.isAnswerSelected = false;
+    this.isCurrentAnswerCorrect = false;
+    this.isCurrentAnswerNotCorrect = false;
+    this.correctAnswerIndex = null;
     clearInterval(this.timerInterval);
     this.setInitialTime();
         this.runTimer();
-        this.isAnswerSelected = false;
+
     if ( this.questions.length === 0) {
       console.log('No questions loaded.');
       return;
@@ -143,7 +143,7 @@ console.log('score:', score);
 
     for (const question of this.questions) {
       for (const answer of question.answers) {
-        if (answer.isCorrect) {
+        if (answer.isCorrect === 1) {
           correctCount++;
         }
       }
@@ -187,10 +187,4 @@ console.log('score:', score);
       }
     }, 1000);
   }
-
-  checkIfCorrectAnswer(answerIndex: number): boolean {
-    const currentQuestion = this.questions[this.currentQuestionIndex];
-    return currentQuestion.answers[answerIndex].isCorrect === 1;
-  }
 }
-
