@@ -23,4 +23,7 @@ export class RisultatiService {
     };
     return this.http.post<Risultati>(`${this.baseURL}risultati`, dati);
   }
+
 }
+
+

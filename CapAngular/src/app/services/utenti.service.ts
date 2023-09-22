@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';//serve per fare le chiamate http.
 import { Utente } from '../models/utente.interface';//importo l'interfaccia.
+import { Risultati } from '../models/risultati.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,6 +33,9 @@ aggiungi(dati: Utente) {
     return this.http.post<Utente>(`${this.baseUrl}users`, dati);
 }
 
+cancellaRisultato(id: string) {
+  return this.http.delete<Risultati>(`${this.baseUrl}risultati/${id}`);
+}
 }
 
 

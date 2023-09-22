@@ -40,4 +40,11 @@ caricaDettagli() {
     this.user = dettaglio;
   });
 }
+
+cancRisultato(id: string) {
+  this.utentiSrv.cancellaRisultato(id).subscribe(() => {
+    // After deletion, remove the risultato from the user's array
+    this.user.risultati = this.user.risultati.filter(risultato => risultato.id !== id);
+  });
+}
 }

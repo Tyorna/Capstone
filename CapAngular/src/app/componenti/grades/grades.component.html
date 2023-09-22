@@ -13,6 +13,7 @@
             <p class="card-text fw-semibold">Date: <span class="fw-medium">{{ risultato.timestamp | date: 'yyyy-MM-dd'
                 }}</span></p>
             <hr class="w-75">
+            <button (click)="cancRisultato(risultato.id)">Delete</button>
           </div>
           <div>
             <div class="d-flex align-items-center justify-content-center w-100 h-100" *ngIf="risultato.score < 50">
