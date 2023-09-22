@@ -181,7 +181,8 @@ console.log('score:', score);
         this.setInitialTime();
         this.runTimer();
       } else {
-        const progress = ((30 - this.remainingTime) / 30) * circumference;
+        const maxTime = this.selectedLevel === 'DIFFICILE' ? 50 : this.selectedLevel === 'MEDIO' ? 40 : 30;
+        const progress =  ((maxTime - this.remainingTime) / maxTime) * circumference;
         circle.style.strokeDashoffset = `${circumference - progress}`;
         this.remainingTime--;
       }
