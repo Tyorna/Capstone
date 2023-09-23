@@ -9,5 +9,4 @@ import com.example.demo.entities.Risultati;
 
 @Repository
 public interface RisultatiRepository extends JpaRepository<Risultati, UUID> {
-
 }

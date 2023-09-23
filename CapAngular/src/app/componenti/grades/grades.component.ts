@@ -20,6 +20,7 @@ Ricordarsi che esiste a prescindere, quindi se voglio fare lo spinner devo mette
 (Anche il punto esclamativo funziona. Ma con questo modo se per caso i dati non arrivano va in errore quindi in questo caso è pericoloso)*/
 user!: Utente;
 id!: string;
+selectedId: string | null = null;
 constructor(
   private route: ActivatedRoute,
   private utentiSrv: UtentiService
@@ -32,19 +33,30 @@ ngOnInit(): void {
     this.caricaDettagli();
   });
 }
-/*Gli diciamo che quando si carica deve recuperare gli utenti. Un metodo httpclient è un observable, quindi chi lo usa lo deve sottoscrivere. Riceverà un arrai di tipo utenti. ((In questo caso non mi serve perchè voglio solo il dettaglio dell'utente). Ma scrivo comunque per vedere se becco l'errore. Scrivo poi nell'html il ciclo for per stampare la lista degli utenti. L'ng for va fatto sull'elemento che si deve ripetere.)
+/*Gli diciamo che quando si carica deve recuperare gli utenti. Un metodo httpclient è un observable, quindi chi lo usa lo deve sottoscrivere. Riceverà un array di tipo utenti. ((In questo caso non mi serve perchè voglio solo il dettaglio dell'utente). Ma scrivo comunque per vedere se becco l'errore. Scrivo poi nell'html il ciclo for per stampare la lista degli utenti. L'ng for va fatto sull'elemento che si deve ripetere.)
  */
 
 caricaDettagli() {
   this.utentiSrv.dettaglioUtente(this.id).subscribe((dettaglio) => {
     this.user = dettaglio;
+    this.user.risultati.sort((a, b) => {
+      const dateA = new Date(a.timestamp);
+      const dateB = new Date(b.timestamp);
+      return dateB.getTime() - dateA.getTime();
+    });
   });
 }
 
 cancRisultato(id: string) {
-  this.utentiSrv.cancellaRisultato(id).subscribe(() => {
-    // After deletion, remove the risultato from the user's array
-    this.user.risultati = this.user.risultati.filter(risultato => risultato.id !== id);
-  });
+  if (this.selectedId === id) {
+    this.selectedId = null;
+  } else {
+    this.selectedId = id;
+  }
+  setTimeout(() => {
+    this.utentiSrv.cancellaRisultato(id).subscribe(() => {
+      this.user.risultati = this.user.risultati.filter(risultato => risultato.id !== id);
+    });
+  }, 3000);
 }
 }

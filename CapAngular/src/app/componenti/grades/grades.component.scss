@@ -16,3 +16,30 @@ hr {
   max-width: 386px;
   margin: 0;
 }
+
+.delete{
+  width: 20%;
+  min-width: 20px;
+}
+
+.bottone {
+  width: 20%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.buttone:focus {
+  outline: none;
+}
+
+.delete-message {
+  font-weight: bold;
+  color: #003ef9;
+  text-decoration: underline;
+}
+
+.isDeleting .delete-message {
+  display: block;
+}

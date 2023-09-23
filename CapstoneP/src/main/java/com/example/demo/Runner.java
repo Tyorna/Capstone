@@ -97,7 +97,7 @@
 //		RispostaPayload aPay17 = new RispostaPayload("TBD", 0, dom5);
 //		RispostaPayload aPay18 = new RispostaPayload("No one", 0, dom5);
 //		RispostaPayload aPay19 = new RispostaPayload("The orca (Orcinus orca)", 1, dom5);
-//		RispostaPayload aPay20 = new RispostaPayload("TBD", 1, dom5);
+//		RispostaPayload aPay20 = new RispostaPayload("TBD", 0, dom5);
 //
 //		Risposta a17 = aService.save(aPay17);
 //		Risposta a18 = aService.save(aPay18);

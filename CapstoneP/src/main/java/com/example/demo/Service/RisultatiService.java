@@ -55,5 +55,4 @@ public class RisultatiService {
 		Risultati found = this.getRisultatiById(id);
 		risultatiRepository.delete(found);
 	}
-
 }

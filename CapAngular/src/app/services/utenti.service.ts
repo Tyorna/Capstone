@@ -36,6 +36,7 @@ aggiungi(dati: Utente) {
 cancellaRisultato(id: string) {
   return this.http.delete<Risultati>(`${this.baseUrl}risultati/${id}`);
 }
+
 }
 
 
