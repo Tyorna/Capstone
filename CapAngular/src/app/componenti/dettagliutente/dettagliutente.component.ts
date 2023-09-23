@@ -20,6 +20,7 @@ export class DettagliutenteComponent implements OnInit {
   (Anche il punto esclamativo funziona. Ma con questo modo se per caso i dati non arrivano va in errore quindi in questo caso è pericoloso)*/
   user!: Utente;
   id!: string;
+  file: string = ""; //creo un stringa per ricevere il file dell'immagine
   constructor(
     private route: ActivatedRoute,
     private utentiSrv: UtentiService
@@ -40,5 +41,24 @@ export class DettagliutenteComponent implements OnInit {
       this.user = dettaglio;
     });
   }
+
+  onFileChange1(value: string) {
+    if(value === "uno"){
+      this.file = "../../../assets/img/kisspng-common-bottlenose-dolphin-shark-dinosaur-planet-im-civil-rights-timeline-timetoast-timelines-5bada7392da3d7.794675181538107193187.png";
+      console.log("Scelta", value);
+    } else if (value === "due"){
+      this.file = "../../../assets/img/kisspng-shark-5d3b4a0ae0f378.6868345015641666669214.png";
+      console.log("Scelta", value);
+    } else if (value === "tre"){
+      this.file = "../../../assets/img/kisspng-tiger-shark-transparency-clip-art-cuteness-linda-cola-de-tiburn-cola-plana-descargar-png-5cff48f9c38b52.160053931560234233801.png";
+      console.log("Scelta", value);
+    } else if(value === "quattro"){
+      this.file = "../../../assets/img/transparent-shark-5e8fd1571fd850.8525057415864835431304.png";
+      console.log("Scelta", value);
+    }
+    }
+
+ /*creo una funzione onFileChange che riceve un evento come parametro, il file selezionato dell'utente è disponibile in event.target.files.
+ Abbiamo bisogno farlo diventare disponibile per usarlo come proprietà di background. Quindi lo settiamo come url.*/
   }
 

@@ -9,12 +9,60 @@
 }
 
 .card{
-  width: 70%;
+  width: 100%;
+  height: 70%;
   border: 2px solid black;
   box-shadow: 1px 1px 16px black;
   background-color: #c3b57c;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-height: 60vh;
+  overflow: auto;
+  max-width: 1032px;
+}
+
+.avatar {
+  z-index: 1;
+  box-shadow: 0 10px 20px 20px #6c93001a;
+  overflow: hidden;
+}
+.matita{
+  bottom:0;
+  right:10px;
+}
+
+
+.image-container1 {
+  width: 36%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #77e4a8;
+  box-shadow: 0px 0px 10px 2px #000000;
+  max-width: 213px;
+  margin-bottom: 35px;
+  min-width: 150px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #77e4a8;
+  box-shadow: 0px 0px 10px 2px #000000;
+  overflow: hidden;
+}
+
+.bi-person-circle {
+  width: 100%;
+  height: 100%;
+  font-size: 200px; /* You can adjust the font size as needed */
+  color: #ff0000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scelta{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

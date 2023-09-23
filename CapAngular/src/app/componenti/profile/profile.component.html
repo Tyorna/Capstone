@@ -1,7 +1,7 @@
 <div class="father py-2">
   <div class="p-5" style="margin-top: 56.8px;">
     <div *ngIf="user" class="text-center">
-      <p class="fs-1 mb-5">Welcome <span class="text-danger fw-bold">{{ user.username }}</span></p>
+      <p class="fs-1 mb-5 text-dark">Welcome <span class="text-danger fw-bold">{{ user.username }}</span></p>
       <div class="mb-3">
         <a [routerLink]="['/profilo/dettagli/', user.id]" routerLinkActive="active"
           class="btn btn-danger rounded-pill me-4">More Info</a>
