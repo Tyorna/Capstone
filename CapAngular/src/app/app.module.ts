@@ -19,6 +19,7 @@ import { LevelComponent } from './componenti/level/level.component';
 import { RisultatiComponent } from './componenti/risultati/risultati.component';
 import { GradesComponent } from './componenti/grades/grades.component';
 
+
 const rotte: Route[] = [
   {
     path: 'test',

@@ -4,10 +4,11 @@
       <p class="fs-1 mb-5 text-dark">Welcome <span class="text-danger fw-bold">{{ user.username }}</span></p>
       <div class="mb-3">
         <a [routerLink]="['/profilo/dettagli/', user.id]" routerLinkActive="active"
-          class="btn btn-danger rounded-pill me-4">More Info</a>
+          class="btn btn-danger rounded-pill me-4 mb-3">More Info</a>
         <a [routerLink]="['/profilo/grades', user.id]" routerLinkActive="active"
-          class="btn btn-danger rounded-pill me-4">Grades</a>
+          class="btn btn-danger rounded-pill me-4 mb-3">Grades</a>
       </div>
+      <img src="../../../assets/animation/Animation - 1695647739598.gif" class= "shark" alt="Your GIF">
       <router-outlet></router-outlet>
     </div>
   </div>

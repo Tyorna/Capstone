@@ -37,6 +37,9 @@ cancellaRisultato(id: string) {
   return this.http.delete<Risultati>(`${this.baseUrl}risultati/${id}`);
 }
 
+uploadUserPhoto(userId: string, file: FormData) {
+  return this.http.post<string>(`${this.baseUrl}users/${userId}/foto`, file);
+}
 }
 
 

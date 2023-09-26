@@ -1,9 +1,19 @@
 <div class="m-auto w-100">
-  <div class="card text-center w-75 m-auto">
-    <div>
+  <div class="card text-center w-75 m-auto position-relative z-3">
+    <div class="h-100">
+      <div *ngIf="user.risultati.length == 0" class="h-100">
+        <div class="card-body h-100">
+          <div class="d-flex align-items-center justify-content-center flex-column h-100">
+            <h5 class="card-title fw-bold">Grades</h5>
+            <p class="fw-bold">There are no results for now, take a test to see your grades!</p>
+            <a [routerLink]="['/test']" routerLinkActive="active"
+              class=" text-white btn btn-danger rounded-pill">Test!</a>
+          </div>
+        </div>
+      </div>
       <div *ngFor="let risultato of user.risultati">
         <div class="card-body d-flex flex-column flex-md-row  justify-content-around border-bottom border-danger">
-          <div class="testo d-flex align-items-center justify-content-center flex-column">
+          <div class="d-flex align-items-center justify-content-center flex-column">
             <h5 class="card-title fw-bold">Grades</h5>
             <hr class="w-50">
             <p class="card-text fw-semibold">Level: <span class="fw-medium">{{ risultato.level }}</span></p>
@@ -34,8 +44,13 @@
             <button (click)="cancRisultato(risultato.id)" class="bottone d-inline"><img
                 src="../../../assets/img/transparent-dust-bin-garbage-box-trash-can-60cfd2745ae6b5.7143470516242325643723.png"
                 class="delete"></button>
-                <div class="delete-message text-center fw-bold"  *ngIf="selectedId === risultato.id && risultato.score < 75"><p class="fw-bold">Deleting your bad score? Clever move!</p></div>
-                <div class="delete-message text-center fw-bold"  *ngIf="selectedId === risultato.id && risultato.score >= 75"><p class="fw-bold">Deleting your good score? Why?!</p></div>
+            <div class="delete-message text-center fw-bold" *ngIf="selectedId === risultato.id && risultato.score < 75">
+              <p class="fw-bold">Deleting your bad score? Clever move!</p>
+            </div>
+            <div class="delete-message text-center fw-bold"
+              *ngIf="selectedId === risultato.id && risultato.score >= 75">
+              <p class="fw-bold">Deleting your good score? Why?!</p>
+            </div>
           </div>
         </div>
       </div>

@@ -42,23 +42,62 @@ export class DettagliutenteComponent implements OnInit {
     });
   }
 
-  onFileChange1(value: string) {
-    if(value === "uno"){
-      this.file = "../../../assets/img/kisspng-common-bottlenose-dolphin-shark-dinosaur-planet-im-civil-rights-timeline-timetoast-timelines-5bada7392da3d7.794675181538107193187.png";
+  async onFileChange1(value: string) {
+    let fotoAvatar: File | null = null; // Initialize it as null
+
+    if (value === "uno") {
+      fotoAvatar = await this.createFileFromPath("../../../assets/img/kisspng-common-bottlenose-dolphin-shark-dinosaur-planet-im-civil-rights-timeline-timetoast-timelines-5bada7392da3d7.794675181538107193187.png");
       console.log("Scelta", value);
-    } else if (value === "due"){
-      this.file = "../../../assets/img/kisspng-shark-5d3b4a0ae0f378.6868345015641666669214.png";
+    } else if (value === "due") {
+      fotoAvatar = await this.createFileFromPath("../../../assets/img/kisspng-shark-5d3b4a0ae0f378.6868345015641666669214.png");
       console.log("Scelta", value);
-    } else if (value === "tre"){
-      this.file = "../../../assets/img/kisspng-tiger-shark-transparency-clip-art-cuteness-linda-cola-de-tiburn-cola-plana-descargar-png-5cff48f9c38b52.160053931560234233801.png";
+    } else if (value === "tre") {
+      fotoAvatar = await this.createFileFromPath("../../../assets/img/kisspng-tiger-shark-transparency-clip-art-cuteness-linda-cola-de-tiburn-cola-plana-descargar-png-5cff48f9c38b52.160053931560234233801.png");
       console.log("Scelta", value);
-    } else if(value === "quattro"){
-      this.file = "../../../assets/img/transparent-shark-5e8fd1571fd850.8525057415864835431304.png";
+    } else if (value === "quattro") {
+      fotoAvatar = await this.createFileFromPath("../../../assets/img/transparent-shark-5e8fd1571fd850.8525057415864835431304.png");
       console.log("Scelta", value);
-    }
     }
 
- /*creo una funzione onFileChange che riceve un evento come parametro, il file selezionato dell'utente è disponibile in event.target.files.
- Abbiamo bisogno farlo diventare disponibile per usarlo come proprietà di background. Quindi lo settiamo come url.*/
+    // Call caricaFoto with the File object
+    if (fotoAvatar) {
+      this.caricaFoto(fotoAvatar);
+    }
   }
 
+  // Helper function to create a File object from a file path
+  async createFileFromPath(filePath: string): Promise<File | null> {
+    try {
+      const response = await fetch(filePath);
+      const blob = await response.blob();
+      const fileName = filePath.split('/').pop() || 'unknown.png';
+      return new File([blob], fileName, { type: blob.type });
+    } catch (error) {
+      console.error('Error creating File object from path', error);
+      return null;
+    }
+  }
+
+  caricaFoto(file: File) {
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      this.utentiSrv.uploadUserPhoto(this.id, formData).subscribe(
+        (response: any) => {
+          if (response && response.imageUrl) {
+            console.log('File uploaded successfully');
+          } else {
+            console.error('Invalid response format from server');
+          }
+        },
+        (error) => {
+          console.error('Error uploading file', error);
+        }
+      );
+    }
+  }
+ /*creo una funzione onFileChange che riceve un evento come parametro, il file selezionato dell'utente è disponibile in event.target.files.
+ Abbiamo bisogno farlo diventare disponibile per usarlo come proprietà di background. Quindi lo settiamo come url.*/
+
+}

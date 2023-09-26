@@ -1,16 +1,40 @@
 <div class="father">
   <div>
-    <img src="../../../assets/img/transparent-happy-family-day-family-day-5f4d40ac41d778.3040192015988983482697.png" class="img1">
+    <img src="../../../assets/img/transparent-happy-family-day-family-day-5f4d40ac41d778.3040192015988983482697.png"
+      class="img1">
   </div>
-<div class="container">
+  <div class="container">
     <div class="mt-5 text-center p-5">
       <h1 class="fw-bold text-DARK">Welcome to <span class="text-danger fw-bold">SharkTest</span></h1>
       <h2 class="text-dark fw-semibold">Test your knowledge about Sharks</h2>
-      <p class="text-dark fw-semibold">Subscribe to get started or log-in!</p>
+      <p class="text-dark fw-semibold" *ngIf="!user">Subscribe to get started or log-in!</p>
     </div>
-    <div class="text-center mb-5">
-      <a [routerLink]="['auth/login']" routerLinkActive="active" class=" text-white btn-danger rounded-pill me-4">Log-In</a>
-      <a [routerLink]="['auth/register']" routerLinkActive="active" class=" text-whitebtn btn-danger rounded-pill">Subscribe</a>
+      <div class="bubble bubble7"></div>
+      <div class="bubble bubble1"></div>
+      <div class="bubble bubble2"></div>
+      <div class="bubble bubble3"></div>
+      <div class="bubble bubble4"></div>
+      <div class="bubble bubble5"></div>
+      <div class="bubble bubble6"></div>
+      <div class="bubble bubble8"></div>
+      <div class="bubble bubble9"></div>
+      <div class="bubble bubble10"></div>
+      <div class="bubble bubble11"></div>
+      <div class="bubble bubble12"></div>
+      <div class="bubble bubble13"></div>
+      <div class="bubble bubble14"></div>
+      <div class="bubble bubble15"></div>
+    <div class="text-center mb-5" *ngIf="!user">
+      <a [routerLink]="['auth/login']" routerLinkActive="active"
+        class=" text-white btn btn-danger rounded-pill me-4">Log-In</a>
+      <a [routerLink]="['auth/register']" routerLinkActive="active"
+        class=" text-white btn btn-danger rounded-pill">Subscribe</a>
+    </div>
+    <div class="text-center mb-5" *ngIf="user">
+      <a [routerLink]="['test']" routerLinkActive="active"
+        class=" text-white btn btn-danger rounded-pill me-4">Test!</a>
+      <a [routerLink]="['/profilo']" routerLinkActive="active"
+        class=" text-white btn btn-danger rounded-pill me-4">Profile</a>
     </div>
   </div>
 </div>

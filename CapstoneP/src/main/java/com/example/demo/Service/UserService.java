@@ -76,4 +76,15 @@ public class UserService {
 
 		return passwordEncoder.matches(rawPassword, encryptedPasswordFromDatabase);
 	}
+
+	public void saveUserPhoto(UUID userId, byte[] fotoAvatar) throws NotFoundException {
+		User user = findById(userId);
+		user.setFotoAvatar(fotoAvatar);
+		userRepository.save(user);
+	}
+
+	public byte[] getUserPhoto(UUID userId) {
+		User user = findById(userId);
+		return user.getFotoAvatar();
+	}
 }

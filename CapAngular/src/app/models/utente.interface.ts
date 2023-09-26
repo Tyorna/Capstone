@@ -5,6 +5,7 @@ export interface Utente {
   email: string;
   username: string;
   risultati: Risultati[];
+  fotoAvatar: string;
 }
 
 /*L'interfaccia mi serve per impacchettare una base dati, perchè devo fare gli oggetti come sono nel database (db.json). Si usano infatti questi modelli di dati.

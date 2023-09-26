@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.Level.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -18,6 +19,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -44,6 +46,9 @@ public class User implements UserDetails {
 	private Role role;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Risultati> risultati = new ArrayList<>();
+	@Lob
+	@JsonIgnore
+	private byte[] fotoAvatar;
 
 	@SuppressWarnings("static-access")
 	public User(String username, String email, String password) {

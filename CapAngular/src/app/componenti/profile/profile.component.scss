@@ -17,3 +17,14 @@ a:focus{
     #020e44 100%
     );
 }
+
+.shark{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  max-width: 186px;
+  min-width: 136px;
+  z-index: 3;
+}
