@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; //importiamo l'httpinterceptor. Se non c'è cessione del token non fa cosa deve fare.
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './componenti/auth/auth-int/auth.interceptor';
 
 import { RouterModule, Route } from '@angular/router';
@@ -40,11 +40,11 @@ const rotte: Route[] = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'dettagli/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
+        path: 'dettagli/:id',
         component: DettagliutenteComponent,
       },
       {
-        path: 'grades/:id', //per arrivare ai dettagli dell'utente, è una rotta con parametri
+        path: 'grades/:id',
         component: GradesComponent,
       },
     ],
@@ -66,7 +66,6 @@ const rotte: Route[] = [
     component: ErrorPageComponent,
   },
 
-  // I path scritti dopo questo non esistono, quindi va sempre scritto per ultimo.
 ];
 @NgModule({
   declarations: [

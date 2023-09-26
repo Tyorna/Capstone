@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';//serve per fare le chiamate http.
-import { Utente } from '../models/utente.interface';//importo l'interfaccia.
+import { HttpClient } from '@angular/common/http';
+import { Utente } from '../models/utente.interface';
 import { Risultati } from '../models/risultati.interface';
 @Injectable({
   providedIn: 'root'
@@ -15,11 +15,6 @@ export class UtentiService {
   recupera() {
     return this.http.get<Utente[]>(`${this.baseUrl}users`);
 }
-
-/*metodo recupera. Gli diciamo che il dato che ti arriva sara un array dentro il quale ci saranno degli oggetti che saranno impacchettati così.
-Ecco perchè se non cè corrispondenza tra quello che c'è scritto nel js e quello del nostro modello di dati non funziona niente. E poi dichiaro il nostro url. Stiamo interrogando l'endpoint utente.
-Chi lo deve usare? Il component. quindi lo deve importare.
-*/
 
 dettaglioUtente(userId: string) {
     return this.http.get<Utente>(`${this.baseUrl}users/${userId}`);
@@ -38,7 +33,7 @@ cancellaRisultato(id: string) {
 }
 
 uploadUserPhoto(userId: string, file: FormData) {
-  return this.http.post<string>(`${this.baseUrl}users/${userId}/foto`, file);
+  return this.http.put<string>(`${this.baseUrl}users/${userId}/foto`, file);
 }
 }
 

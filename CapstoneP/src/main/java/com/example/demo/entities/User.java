@@ -41,13 +41,13 @@ public class User implements UserDetails {
 	private String username;
 	@Column(nullable = false, unique = true)
 	private String email;
+	@JsonIgnore
 	private String password;
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Risultati> risultati = new ArrayList<>();
 	@Lob
-	@JsonIgnore
 	private byte[] fotoAvatar;
 
 	@SuppressWarnings("static-access")

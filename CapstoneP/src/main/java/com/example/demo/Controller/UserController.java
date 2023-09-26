@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,15 +60,16 @@ public class UserController {
 		userService.findByIdAndDelete(userId);
 	}
 
-	@PostMapping("/{userId}/foto")
-	public String uploadUserPhoto(@PathVariable UUID userId, @RequestParam("file") MultipartFile file) {
+	@PutMapping("/{userId}/foto")
+	public ResponseEntity<String> uploadUserPhoto(@PathVariable UUID userId, @RequestParam("file") MultipartFile file) {
 		try {
 			System.out.println("Ci arrivo?");
 			byte[] photoData = file.getBytes();
 			userService.saveUserPhoto(userId, photoData);
-			return "File uploaded successfully";
+			return ResponseEntity.ok().body("{\"message\": \"File uploaded successfully\"}");
 		} catch (IOException | NotFoundException e) {
-			return "Error uploading file";
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.body("{\"message\": \"Error uploading file\"}");
 		}
 	}
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';//Perchè deve essere reindirizzato dopo il login.
-import { NgForm } from '@angular/forms';// E un form quindi da importare. Nel caso di login e quasi sempre un td form.
-import { AuthService } from '../auth/auth-int/auth.service';//Da importare per usare i metodi
-import { AuthInt } from '../auth/auth-int..interface';// Importiamo per fare il login
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth/auth-int/auth.service';
+import { AuthInt } from '../auth/auth-int..interface';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   isLoading = false;
 
-  constructor(private authSrv: AuthService, private router: Router) {}//metto private i due componenti che mi servono.
+  constructor(private authSrv: AuthService, private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -38,9 +38,4 @@ export class LoginComponent implements OnInit {
       alert(error);
   }
   }
-  /* Facciamo il metodo accedi che riceve il form.
-  Facciamo il console.log per vedere il funzionamento e poi facciamo un try/catch.
-  Nel try chiamiamo il login e poi lo sottoscriviamo, facciamo un alert e poi lo spediamo con router navigate alla pagina del profilo. Nel catch invece prendiamo come argomento l'errore che faremo poi stampare in console. E facciamo un alert che ci avverte che stiamo facendo un login errato.
-  Ora ci andiamo a creare il nostro form
-  */
 }

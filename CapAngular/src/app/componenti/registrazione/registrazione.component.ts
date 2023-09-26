@@ -32,11 +32,4 @@ export class RegistrazioneComponent implements OnInit {
           this.isLoading = false
       }
   }
-/*metodo che fa la registrazione che riceverà il form.
-Per controllo facciamo sempre il console.log dei valori.
-DI solito si fa una try catch per riuscire a beccare gli errori.
-Parto con il try: this.authsrv.metodosignup(cosa deve registrare).subscirbe.
-Lo mandiamo alla pagina di login dopo la registrazione.
-Se qualcosa non va facciamo un catch degli errori con il console.log lo vediamo in console. E facciamo il routing per farlo restare dov'è. Vado a scrivere il form nell'html.
-*/
 }

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LevelComponent implements OnInit {
 
-  selectedLevel: string = 'BASE'; // Default
+  selectedLevel: string = 'BASE';
 
   constructor(private router: Router) { }
 

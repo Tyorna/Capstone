@@ -8,9 +8,9 @@ import { AuthService } from '../../auth/auth-int/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  user!: AuthInt | null; //variabile utente che può essere di tipo authdata o null.
+  user!: AuthInt | null;
 
-  constructor(private authSrv: AuthService) {} //Mettiamo il solito authsrv che ci serve usare.
+  constructor(private authSrv: AuthService) {}
 
   ngOnInit(): void {
     this.authSrv.user$.subscribe((_user) => {
@@ -18,15 +18,7 @@ export class NavbarComponent implements OnInit {
   });
   }
 
-   /* COme fa la navbar a sapere che c'è l'utente? Ci serve sottoscrivere l'utente.
-    Quindi all'oninit, sottoscriviamo l'utente.
-    Le diciamo: riceverai un utente o null e se c'è ci stanno i dato in utente (in questo caso user.).
-    La navbar verifica se c'è l'utente perchè ci sono componenti che compaiono solo se c'è l'utente o meno.
-    */
-
     logout() {
       this.authSrv.logout();
   }
-  // Al metodo logout quando cliccato faccio logout.
-
 }

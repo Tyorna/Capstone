@@ -94,15 +94,11 @@
 //		DomandaPayload QuestionPay5 = new DomandaPayload("Who do prey on sharks ??", Level.BASE);
 //		Domanda dom5 = dService.save(QuestionPay5);
 //
-//		RispostaPayload aPay17 = new RispostaPayload("TBD", 0, dom5);
 //		RispostaPayload aPay18 = new RispostaPayload("No one", 0, dom5);
 //		RispostaPayload aPay19 = new RispostaPayload("The orca (Orcinus orca)", 1, dom5);
-//		RispostaPayload aPay20 = new RispostaPayload("TBD", 0, dom5);
 //
-//		Risposta a17 = aService.save(aPay17);
 //		Risposta a18 = aService.save(aPay18);
 //		Risposta a19 = aService.save(aPay19);
-//		Risposta a20 = aService.save(aPay20);
 //
 //		// Sei
 //		DomandaPayload QuestionPay6 = new DomandaPayload("In sharks the skeleton is: ", Level.BASE);
