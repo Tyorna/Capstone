@@ -29,7 +29,6 @@ export class DettagliutenteComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((parametro) => {
       this.id = parametro['id'];
-      console.log(this.id);
       this.caricaDettagli();
     });
   }

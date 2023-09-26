@@ -1,40 +1,40 @@
-<ng-container *ngIf="textLoaded; then domande; else loading"></ng-container>
-<ng-template #domande>
-  <div class="father mt-5">
-    <div class="bubble bubble7"></div>
-      <div class="bubble bubble1"></div>
-      <div class="bubble bubble2"></div>
-      <div class="bubble bubble3"></div>
-      <div class="bubble bubble4"></div>
-      <div class="bubble bubble5"></div>
-      <div class="bubble bubble6"></div>
-      <div class="bubble bubble8"></div>
-      <div class="bubble bubble9"></div>
-      <div class="bubble bubble10"></div>
-      <div class="bubble bubble11"></div>
-      <div class="bubble bubble12"></div>
-      <div class="bubble bubble13"></div>
-      <div class="bubble bubble14"></div>
-      <div class="bubble bubble15"></div>
-    <div class="timer text-center">
-      <svg class="countdown-circle" width="145" height="145" viewBox="0 0 145 145">
-        <circle class="circle-shadow d-none d-sm-block" cx="70" cy="70" r="64"></circle>
-        <circle class="circle-bg d-none d-sm-block" cx="70" cy="70" r="64"></circle>
-        <circle class="circle-progress d-none d-sm-block" cx="70" cy="70" r="64"></circle>
-        <text x="70" y="45" class="circle-text d-none d-sm-block" text-anchor="middle"
-          dominant-baseline="middle">SECONDS</text>
-        <text x="70" y="70" class="circle-text fs-1 fw-bold" text-anchor="middle" dominant-baseline="middle">{{
-          remainingTime }}</text>
-        <text x="70" y="95" class="circle-text d-none d-sm-block" text-anchor="middle"
-          dominant-baseline="middle">REMAINING</text>
-      </svg>
-    </div>
+<div class="father mt-5">
+  <div class="bubble bubble7"></div>
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+  <div class="bubble bubble4"></div>
+  <div class="bubble bubble5"></div>
+  <div class="bubble bubble6"></div>
+  <div class="bubble bubble8"></div>
+  <div class="bubble bubble9"></div>
+  <div class="bubble bubble10"></div>
+  <div class="bubble bubble11"></div>
+  <div class="bubble bubble12"></div>
+  <div class="bubble bubble13"></div>
+  <div class="bubble bubble14"></div>
+  <div class="bubble bubble15"></div>
+  <div class="timer text-center">
+    <svg class="countdown-circle" width="145" height="145" viewBox="0 0 145 145">
+      <circle class="circle-shadow d-none d-sm-block" cx="70" cy="70" r="64"></circle>
+      <circle class="circle-bg d-none d-sm-block" cx="70" cy="70" r="64"></circle>
+      <circle class="circle-progress d-none d-sm-block" cx="70" cy="70" r="64"></circle>
+      <text x="70" y="45" class="circle-text d-none d-sm-block" text-anchor="middle"
+        dominant-baseline="middle">SECONDS</text>
+      <text x="70" y="70" class="circle-text fs-1 fw-bold" text-anchor="middle" dominant-baseline="middle">{{
+        remainingTime }}</text>
+      <text x="70" y="95" class="circle-text d-none d-sm-block" text-anchor="middle"
+        dominant-baseline="middle">REMAINING</text>
+    </svg>
+  </div>
 
-    <img src="../../../assets/animation/Animation -2.gif" class="shark d-none d-sm-block" alt="Your GIF">
+  <img src="../../../assets/animation/Animation -2.gif" class="shark d-none d-sm-block" alt="Your GIF">
 
-    <div class="card text-center bg-info rounded">
-      <div class="card-body mb-2">
+  <div class="card text-center bg-info rounded">
+    <div class="card-body mb-2">
+      <div *ngIf="questions && questions[currentQuestionIndex]; else loadingSpinner">
         <h5 class="card-title mb-3">Question {{ currentQuestionIndex + 1 }}</h5>
+
         <div class="p-3 border-danger border-top mb-0">
           <p class="mb-0">{{ questions[currentQuestionIndex].text }}</p>
         </div>
@@ -53,16 +53,16 @@
             </div>
           </div>
 
-
         </div>
       </div>
     </div>
+    <ng-template #loadingSpinner>
+      <div class="text-center">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p>Loading questions...</p>
+      </div>
+    </ng-template>
   </div>
-</ng-template>
-<ng-template #loading>
-  <div class="father mt-5">
-    <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-</ng-template>
+</div>

@@ -24,7 +24,6 @@ export class DomandeComponent implements OnInit {
   baseURL = environment.baseURL;
   remainingTime!: number;
   timerInterval: any;
-  textLoaded: boolean = false;
   isCurrentAnswerCorrect: boolean = false;
   isCurrentAnswerNotCorrect: boolean  = false;
   correctAnswerIndex: number | null = null;
@@ -39,7 +38,6 @@ export class DomandeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-      this.textLoaded = true;
     this.route.params.subscribe((params) => {
       this.selectedLevel = params['level'];
       this.loadQuestions();
@@ -50,7 +48,6 @@ export class DomandeComponent implements OnInit {
     this.testService.getDomandeByLivello(this.selectedLevel).subscribe((data) => {
       this.questions = data;
       console.log('Loaded questions:', this.questions);
-      this.textLoaded = true;
       this.setInitialTime();
       this.runTimer();
     });
@@ -59,7 +56,6 @@ export class DomandeComponent implements OnInit {
   selectedQuestion(selectedIndex: number) {
     const currentQuestion = this.questions[this.currentQuestionIndex];
     const selectedAnswer = currentQuestion.answers[selectedIndex];
-    console.log('Selected Answer:', selectedAnswer);
     console.log('Is Correct?', selectedAnswer.isCorrect);
 
 
@@ -80,31 +76,32 @@ export class DomandeComponent implements OnInit {
 
 
   nextQuestion() {
-    this.isCurrentAnswerCorrect = false;
-    this.isCurrentAnswerNotCorrect = false;
-    this.correctAnswerIndex = null;
-    clearInterval(this.timerInterval);
-    this.setInitialTime();
-        this.runTimer();
-
     if ( this.questions.length === 0) {
       console.log('No questions loaded.');
       return;
     }
 
     if (this.currentQuestionIndex < this.questions.length - 1) {
+      this.isCurrentAnswerCorrect = false;
+    this.isCurrentAnswerNotCorrect = false;
+    this.correctAnswerIndex = null;
+    clearInterval(this.timerInterval);
+    this.setInitialTime();
+        this.runTimer();
       this.currentQuestionIndex++;
       this.selectedAnswerIndex = -1;
       console.log('Index', this.currentQuestionIndex)
       console.log('Index', this.questions.length)
     } else {
       console.log('Reached the end of questions.');
+      clearInterval(this.timerInterval);
+      console.log('Stai ancora scorrendo?', this.remainingTime);
       const totalQuestions = this.questions.length;
     const correctAnswers = this.correctScore;
     const selectedLevel = this.selectedLevel;
     const user = this.authService.recuperaUtenteAttuale();
     if (user) {
-      const score = (correctAnswers / totalQuestions) * 100;
+      const score = parseFloat(((correctAnswers / totalQuestions) * 100).toFixed(2));
 console.log('Utente trovato', user.id, user.email);
 
 const  nuovoId = user.id.replace(/"/g, '');
@@ -138,6 +135,8 @@ console.log('score:', score);
   }
 }
 
+
+
   calculateCorrectAnswers(): number {
     let correctCount = 0;
 
@@ -151,6 +150,8 @@ console.log('score:', score);
 
     return correctCount;
   }
+
+
 
   setInitialTime() {
     switch (this.selectedLevel) {
@@ -169,23 +170,30 @@ console.log('score:', score);
     }
   }
 
+
+
   runTimer() {
     clearInterval(this.timerInterval);
     const circle = document.querySelector('.circle-progress') as HTMLElement;
-    const circumference = parseFloat(getComputedStyle(circle).getPropertyValue('stroke-dasharray'));
 
-    this.timerInterval = setInterval(() => {
-      if (this.remainingTime <= 0) {
-        clearInterval(this.timerInterval);
-        this.nextQuestion();
-        this.setInitialTime();
-        this.runTimer();
-      } else {
-        const maxTime = this.selectedLevel === 'DIFFICILE' ? 50 : this.selectedLevel === 'MEDIO' ? 40 : 30;
-        const progress =  ((maxTime - this.remainingTime) / maxTime) * circumference;
-        circle.style.strokeDashoffset = `${circumference - progress}`;
-        this.remainingTime--;
-      }
-    }, 1000);
+    if (circle) {
+        const circumference = parseFloat(getComputedStyle(circle).getPropertyValue('stroke-dasharray'));
+        this.timerInterval = setInterval(() => {
+          if (this.remainingTime <= 0) {
+            clearInterval(this.timerInterval);
+            this.nextQuestion();
+            this.setInitialTime();
+            this.runTimer();
+          } else {
+            const maxTime = this.selectedLevel === 'DIFFICILE' ? 50 : this.selectedLevel === 'MEDIO' ? 40 : 30;
+            const progress =  ((maxTime - this.remainingTime) / maxTime) * circumference;
+            circle.style.strokeDashoffset = `${circumference - progress}`;
+            this.remainingTime--;
+          }
+        }, 1000);
+    } else {
+        console.log('Circle element not found.');
+    }
+
   }
 }

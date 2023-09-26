@@ -2,14 +2,14 @@
   <div class="card text-center m-auto pt-3 position-relative z-3">
     <p class="fs-3 text-dark mb-5">Informazione utente</p>
     <div class="d-flex flex-column flex-md-row align-items-center  justify-content-around">
-      <div class="decoration p-3 d-flex flex-column align-items-center justify-content-center mb-4">
+      <div class="decoration p-3 d-flex flex-column align-items-center justify-content-center mb-4" *ngIf="user">
         <p class="text-dark fs-4">Username: {{user.username}}</p>
         <p class="text-dark fs-4">Email: {{user.email}}</p>
       </div>
       <div class=" position-relative image-container1 d-block d-lg-inline-block">
-        <div class="image-container scelta" [ngStyle]="{backgroundImage: 'url(' + user.fotoAvatar + ')'}">
+       <!-- <div class="image-container scelta" [ngStyle]="{backgroundImage: 'url(' + user.fotoAvatar + ')'}">
           <i class="bi bi-person-circle text-danger" *ngIf="!user.fotoAvatar"></i>
-        </div>
+        </div>-->
         <div class="dropdown position-absolute matita">
           <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-pencil-fill p-0"></i>
