@@ -141,8 +141,8 @@
 //		Domanda dom9 = dService.save(QuestionPay9);
 //
 //		RispostaPayload aPay33 = new RispostaPayload("The bull shark (Carcharhinus leucas)", 0, dom9);
-//		RispostaPayload aPay34 = new RispostaPayload("Hammerhead Shark", 0, dom9);
-//		RispostaPayload aPay35 = new RispostaPayload("Lemon Shark", 0, dom9);
+//		RispostaPayload aPay34 = new RispostaPayload("Scalloped Hammerhead (Sphyrna lewini)", 0, dom9);
+//		RispostaPayload aPay35 = new RispostaPayload("Lemon Shark (Negaprion brevirostris)", 0, dom9);
 //		RispostaPayload aPay36 = new RispostaPayload("The blacktip reef shark (Carcharhinus melanopterus)", 1, dom9);
 //
 //		Risposta a33 = aService.save(aPay33);
@@ -218,10 +218,10 @@
 //				"Which type of shark is known for its distinctive barbels around its mouth?", Level.MEDIO);
 //		Domanda domM3 = dService.save(QuestionM3);
 //
-//		RispostaPayload bPay9 = new RispostaPayload("Mako Shark", 0, domM3);
+//		RispostaPayload bPay9 = new RispostaPayload("Mako Shark (Isurus oxyrinchus)", 0, domM3);
 //		RispostaPayload bPay10 = new RispostaPayload("The bull shark (Carcharhinus leucas)", 0, domM3);
-//		RispostaPayload bPay11 = new RispostaPayload("Nurse Shark", 1, domM3);
-//		RispostaPayload bPay12 = new RispostaPayload("Goblin Shark", 0, domM3);
+//		RispostaPayload bPay11 = new RispostaPayload("Nurse Shark (Ginglymostoma cirratum)", 1, domM3);
+//		RispostaPayload bPay12 = new RispostaPayload("Goblin Shark (Mitsukurina owstoni)", 0, domM3);
 //
 //		Risposta b9 = aService.save(bPay9);
 //		Risposta b10 = aService.save(bPay10);
@@ -233,10 +233,10 @@
 //				Level.MEDIO);
 //		Domanda domM4 = dService.save(QuestionM4);
 //
-//		RispostaPayload bPay13 = new RispostaPayload("Smooth Hammerhead", 0, domM4);
-//		RispostaPayload bPay14 = new RispostaPayload("Great Hammerhead", 1, domM4);
-//		RispostaPayload bPay15 = new RispostaPayload("Scalloped Hammerhead", 0, domM4);
-//		RispostaPayload bPay16 = new RispostaPayload("Bonnethead", 0, domM4);
+//		RispostaPayload bPay13 = new RispostaPayload("Smooth Hammerhead (Sphyrna zygaena)", 0, domM4);
+//		RispostaPayload bPay14 = new RispostaPayload("Great Hammerhead (Sphyrna mokarran)", 1, domM4);
+//		RispostaPayload bPay15 = new RispostaPayload("Scalloped Hammerhead (Sphyrna lewini)", 0, domM4);
+//		RispostaPayload bPay16 = new RispostaPayload("Bonnethead (Sphyrna tiburo)", 0, domM4);
 //
 //		Risposta b13 = aService.save(bPay13);
 //		Risposta b14 = aService.save(bPay14);
@@ -249,9 +249,9 @@
 //		Domanda domM5 = dService.save(QuestionM5);
 //
 //		RispostaPayload bPay17 = new RispostaPayload("The bull shark (Carcharhinus leucas)", 1, domM5);
-//		RispostaPayload bPay18 = new RispostaPayload("Hammerhead Shark", 0, domM5);
-//		RispostaPayload bPay19 = new RispostaPayload("Great White Shark", 0, domM5);
-//		RispostaPayload bPay20 = new RispostaPayload("The tiger shark", 0, domM5);
+//		RispostaPayload bPay18 = new RispostaPayload("Great Hammerhead (Sphyrna mokarran)", 0, domM5);
+//		RispostaPayload bPay19 = new RispostaPayload("Great White Shark (Carcharodon carcharias)", 0, domM5);
+//		RispostaPayload bPay20 = new RispostaPayload("The tiger shark (Galeocerdo cuvier)", 0, domM5);
 //
 //		Risposta b17 = aService.save(bPay17);
 //		Risposta b18 = aService.save(bPay18);
@@ -318,14 +318,14 @@
 //		Risposta b36 = aService.save(bPay36);
 //
 //		// DieciM
-//		DomandaPayload QuestionM10 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.MEDIO);
+//		DomandaPayload QuestionM10 = new DomandaPayload("What is the term for the mutualistic relationship between "
+//				+ "some cleaner fish and sharks, where the cleaner fish remove parasites from the shark's skin and mouth?", Level.MEDIO);
 //		Domanda domM10 = dService.save(QuestionM10);
 //
-//		RispostaPayload bPay37 = new RispostaPayload("Stability and balance", 1, domM10);
-//		RispostaPayload bPay38 = new RispostaPayload("Steering", 0, domM10);
-//		RispostaPayload bPay39 = new RispostaPayload("Propulsion", 0, domM10);
-//		RispostaPayload bPay40 = new RispostaPayload("Capturing prey", 0, domM10);
+//		RispostaPayload bPay37 = new RispostaPayload("Symbiotic grooming", 0, domM10);
+//		RispostaPayload bPay38 = new RispostaPayload("Cleaning station", 1, domM10);
+//		RispostaPayload bPay39 = new RispostaPayload("Mutualistic cleansing", 0, domM10);
+//		RispostaPayload bPay40 = new RispostaPayload("Parasite pickers", 0, domM10);
 //
 //		Risposta b37 = aService.save(bPay37);
 //		Risposta b38 = aService.save(bPay38);
@@ -333,14 +333,14 @@
 //		Risposta b40 = aService.save(bPay40);
 //
 //		// UndiciM
-//		DomandaPayload QuestionM11 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.MEDIO);
+//		DomandaPayload QuestionM11 = new DomandaPayload("    Which shark species has been referred to as the \"living fossil\" due "
+//				+ "to its ancient lineage and minimal evolutionary changes over millions of years?" ,Level.MEDIO);
 //		Domanda domM11 = dService.save(QuestionM11);
 //
-//		RispostaPayload bPay41 = new RispostaPayload("Stability and balance", 1, domM11);
-//		RispostaPayload bPay42 = new RispostaPayload("Steering", 0, domM11);
-//		RispostaPayload bPay43 = new RispostaPayload("Propulsion", 0, domM11);
-//		RispostaPayload bPay44 = new RispostaPayload("Capturing prey", 0, domM11);
+//		RispostaPayload bPay41 = new RispostaPayload("Bull Shark (Carcharhinus leucas)", 0, domM11);
+//		RispostaPayload bPay42 = new RispostaPayload("Goblin Shark (Mitsukurina owstoni)", 0, domM11);
+//		RispostaPayload bPay43 = new RispostaPayload("Pelagic Thresher (Alopias pelagicus) i", 0, domM11);
+//		RispostaPayload bPay44 = new RispostaPayload("Frilled Shark (Chlamydoselachus anguineus) ", 1, domM11);
 //
 //		Risposta b41 = aService.save(bPay41);
 //		Risposta b42 = aService.save(bPay42);
@@ -348,14 +348,14 @@
 //		Risposta b44 = aService.save(bPay44);
 //
 //		// UnoD
-//		DomandaPayload QuestionD1 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD1 = new DomandaPayload("Which shark species is known for its incredible ability"
+//				+ " to jump up to 10 feet (3 meters) in the air while hunting, displaying impressive acrobatics?", Level.DIFFICILE);
 //		Domanda domD1 = dService.save(QuestionD1);
 //
-//		RispostaPayload dPay1 = new RispostaPayload("Stability and balance", 1, domD1);
-//		RispostaPayload dPay2 = new RispostaPayload("Steering", 0, domD1);
-//		RispostaPayload dPay3 = new RispostaPayload("Propulsion", 0, domD1);
-//		RispostaPayload dPay4 = new RispostaPayload("Capturing prey", 0, domD1);
+//		RispostaPayload dPay1 = new RispostaPayload("Common Thresher Shark (Alopias vulpinus)", 1, domD1);
+//		RispostaPayload dPay2 = new RispostaPayload("Oceanic Whitetip Shark (Carcharhinus longimanus)", 0, domD1);
+//		RispostaPayload dPay3 = new RispostaPayload("Blue Shark (Prionace glauca)", 0, domD1);
+//		RispostaPayload dPay4 = new RispostaPayload("Porbeagle Shark (Lamna nasus) ", 0, domD1);
 //
 //		Risposta d1 = aService.save(dPay1);
 //		Risposta d2 = aService.save(dPay2);
@@ -363,14 +363,14 @@
 //		Risposta d4 = aService.save(dPay4);
 //
 //		// DueD
-//		DomandaPayload QuestionD2 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD2 = new DomandaPayload("What is the term for the specialized scales found on the skin of"
+//				+ " some shark species, which are highly mineralized and resemble small teeth?", Level.DIFFICILE);
 //		Domanda domD2 = dService.save(QuestionD2);
 //
-//		RispostaPayload dPay5 = new RispostaPayload("Stability and balance", 1, domD2);
-//		RispostaPayload dPay6 = new RispostaPayload("Steering", 0, domD2);
-//		RispostaPayload dPay7 = new RispostaPayload("Propulsion", 0, domD2);
-//		RispostaPayload dPay8 = new RispostaPayload("Capturing prey", 0, domD2);
+//		RispostaPayload dPay5 = new RispostaPayload("Placoid scale", 0, domD2);
+//		RispostaPayload dPay6 = new RispostaPayload("Osteoderm", 0, domD2);
+//		RispostaPayload dPay7 = new RispostaPayload(" Denticle", 1, domD2);
+//		RispostaPayload dPay8 = new RispostaPayload("Scute", 0, domD2);
 //
 //		Risposta d5 = aService.save(dPay5);
 //		Risposta d6 = aService.save(dPay6);
@@ -378,14 +378,15 @@
 //		Risposta d8 = aService.save(dPay8);
 //
 //		// TreD
-//		DomandaPayload QuestionD3 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD3 = new DomandaPayload("Which shark species is known for its remarkable ability to survive"
+//				+ " in extreme conditions, such as high salinity and low oxygen levels, and is sometimes "
+//				+ "called the \"couch potato\" of the deep sea?", Level.DIFFICILE);
 //		Domanda domD3 = dService.save(QuestionM3);
 //
-//		RispostaPayload dPay9 = new RispostaPayload("Stability and balance", 1, domD3);
-//		RispostaPayload dPay10 = new RispostaPayload("Steering", 0, domD3);
-//		RispostaPayload dPay11 = new RispostaPayload("Propulsion", 0, domD3);
-//		RispostaPayload dPay12 = new RispostaPayload("Capturing prey", 0, domD3);
+//		RispostaPayload dPay9 = new RispostaPayload("Goblin Shark (Mitsukurina owstoni)", 0, domD3);
+//		RispostaPayload dPay10 = new RispostaPayload("Bluntnose Sixgill Shark (Hexanchus griseus)", 1, domD3);
+//		RispostaPayload dPay11 = new RispostaPayload("Frilled Shark (Chlamydoselachus anguineus)", 0, domD3);
+//		RispostaPayload dPay12 = new RispostaPayload("Gulper Shark (Centrophorus granulosus)", 0, domD3);
 //
 //		Risposta d9 = aService.save(dPay9);
 //		Risposta d10 = aService.save(dPay10);
@@ -393,14 +394,14 @@
 //		Risposta d12 = aService.save(dPay12);
 //
 //		// 4D
-//		DomandaPayload QuestionD4 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD4 = new DomandaPayload("What is the primary reason why the \"megamouth shark\" (Megachasma pelagios) "
+//				+ "is considered one of the rarest sharks in the world?", Level.DIFFICILE);
 //		Domanda domD4 = dService.save(QuestionD4);
 //
-//		RispostaPayload dPay13 = new RispostaPayload("Stability and balance", 1, domD4);
-//		RispostaPayload dPay14 = new RispostaPayload("Steering", 0, domD4);
-//		RispostaPayload dPay15 = new RispostaPayload("Propulsion", 0, domD4);
-//		RispostaPayload dPay16 = new RispostaPayload("Capturing prey", 0, domD4);
+//		RispostaPayload dPay13 = new RispostaPayload("It is a nocturnal species that only feeds at night", 0, domD4);
+//		RispostaPayload dPay14 = new RispostaPayload("It has a highly restricted habitat range", 0, domD4);
+//		RispostaPayload dPay15 = new RispostaPayload("It is difficult to study due to its elusive nature", 0, domD4);
+//		RispostaPayload dPay16 = new RispostaPayload("It is a nocturnal species that only feeds at night", 1, domD4);
 //
 //		Risposta d13 = aService.save(dPay13);
 //		Risposta d14 = aService.save(dPay14);
@@ -408,14 +409,14 @@
 //		Risposta d16 = aService.save(dPay16);
 //
 //		// 5D
-//		DomandaPayload QuestionD5 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD5 = new DomandaPayload("Which shark species holds the record for the deepest-dwelling"
+//				+ " shark, having been found at depths exceeding 8,000 meters in the Mariana Trench?", Level.DIFFICILE);
 //		Domanda domD5 = dService.save(QuestionD5);
 //
-//		RispostaPayload dPay17 = new RispostaPayload("Stability and balance", 1, domD5);
-//		RispostaPayload dPay18 = new RispostaPayload("Steering", 0, domD5);
-//		RispostaPayload dPay19 = new RispostaPayload("Propulsion", 0, domD5);
-//		RispostaPayload dPay20 = new RispostaPayload("Capturing prey", 0, domD5);
+//		RispostaPayload dPay17 = new RispostaPayload("Ghost Shark (Mitsukurina owstoni)", 1, domD5);
+//		RispostaPayload dPay18 = new RispostaPayload("Bluntnose Sixgill Shark (Hexanchus griseus)", 0, domD5);
+//		RispostaPayload dPay19 = new RispostaPayload("Cookiecutter Shark  (Isistius brasiliensis)", 0, domD5);
+//		RispostaPayload dPay20 = new RispostaPayload("Megamouth Shark (Megachasma pelagios)", 0, domD5);
 //
 //		Risposta d17 = aService.save(dPay17);
 //		Risposta d18 = aService.save(dPay18);
@@ -423,14 +424,15 @@
 //		Risposta d20 = aService.save(dPay20);
 //
 //		// SeiD
-//		DomandaPayload QuestionD6 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD6 = new DomandaPayload("Which shark species is known for its incredible deep-sea habitat,"
+//				+ " often residing in waters below 3,000 meters, and its unique ability to expel glowing"
+//				+ " clouds of bioluminescent fluid to confuse predators?", Level.DIFFICILE);
 //		Domanda domD6 = dService.save(QuestionD6);
 //
-//		RispostaPayload dPay21 = new RispostaPayload("Stability and balance", 1, domD6);
-//		RispostaPayload dPay22 = new RispostaPayload("Steering", 0, domD6);
-//		RispostaPayload dPay23 = new RispostaPayload("Propulsion", 0, domD6);
-//		RispostaPayload dPay24 = new RispostaPayload("Capturing prey", 0, domD6);
+//		RispostaPayload dPay21 = new RispostaPayload("Whitecheek lanternshark (Etmopterus alphus)", 0, domD6);
+//		RispostaPayload dPay22 = new RispostaPayload("Frilled Shark (Chlamydoselachus anguineus)", 0, domD6);
+//		RispostaPayload dPay23 = new RispostaPayload("Cookiecutter Shark  (Isistius brasiliensis)", 1, domD6);
+//		RispostaPayload dPay24 = new RispostaPayload("Goblin Shark (Mitsukurina owstoni)", 0, domD6);
 //
 //		Risposta d21 = aService.save(dPay21);
 //		Risposta d22 = aService.save(dPay22);
@@ -438,14 +440,14 @@
 //		Risposta d24 = aService.save(dPay24);
 //
 //		// SetteD
-//		DomandaPayload QuestionD7 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD7 = new DomandaPayload("Which of the following shark species is known for its long gestation period, "
+//				+ "sometimes lasting more than a year?", Level.DIFFICILE);
 //		Domanda domD7 = dService.save(QuestionD7);
 //
-//		RispostaPayload dPay25 = new RispostaPayload("Stability and balance", 1, domD7);
-//		RispostaPayload dPay26 = new RispostaPayload("Steering", 0, domD7);
-//		RispostaPayload dPay27 = new RispostaPayload("Propulsion", 0, domD7);
-//		RispostaPayload dPay28 = new RispostaPayload("Capturing prey", 0, domD7);
+//		RispostaPayload dPay25 = new RispostaPayload("Great Hammerhead (Sphyrna mokarran)", 0, domD7);
+//		RispostaPayload dPay26 = new RispostaPayload("Lemon Shark (Negaprion brevirostris)", 1, domD7);
+//		RispostaPayload dPay27 = new RispostaPayload(" tiger shark (Galeocerdo cuvier)", 0, domD7);
+//		RispostaPayload dPay28 = new RispostaPayload("Great White Shark (Carcharodon carcharias)", 0, domD7);
 //
 //		Risposta d25 = aService.save(dPay25);
 //		Risposta d26 = aService.save(dPay26);
@@ -453,14 +455,15 @@
 //		Risposta d28 = aService.save(dPay28);
 //
 //		// OttoD
-//		DomandaPayload QuestionD8 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD8 = new DomandaPayload("Which term refers to the process where some shark embryos"
+//				+ " develop teeth-like structures that allow them to feed on other embryos within "
+//				+ "the mother's womb?", Level.DIFFICILE);
 //		Domanda domD8 = dService.save(QuestionD8);
 //
-//		RispostaPayload dPay29 = new RispostaPayload("Stability and balance", 1, domD8);
-//		RispostaPayload dPay30 = new RispostaPayload("Steering", 0, domD8);
-//		RispostaPayload dPay31 = new RispostaPayload("Propulsion", 0, domD8);
-//		RispostaPayload dPay32 = new RispostaPayload("Capturing prey", 0, domD8);
+//		RispostaPayload dPay29 = new RispostaPayload("Sibling rivalry", 0, domD8);
+//		RispostaPayload dPay30 = new RispostaPayload("Ovoviviparity", 0, domD8);
+//		RispostaPayload dPay31 = new RispostaPayload("Intrauterine competition", 1, domD8);
+//		RispostaPayload dPay32 = new RispostaPayload("Cannibalistic behavior", 0, domD8);
 //
 //		Risposta d29 = aService.save(dPay29);
 //		Risposta d30 = aService.save(dPay30);
@@ -468,14 +471,14 @@
 //		Risposta d32 = aService.save(dPay32);
 //
 //		// NoveD
-//		DomandaPayload QuestionD9 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD9 = new DomandaPayload("Bull sharks (Carcharhinus leucas) are known for their aggressive feeding behavior. "
+//				+ "What type of prey do they primarily target?", Level.DIFFICILE);
 //		Domanda domD9 = dService.save(QuestionD9);
 //
-//		RispostaPayload dPay33 = new RispostaPayload("Stability and balance", 1, domD9);
-//		RispostaPayload dPay34 = new RispostaPayload("Steering", 0, domD9);
-//		RispostaPayload dPay35 = new RispostaPayload("Propulsion", 0, domD9);
-//		RispostaPayload dPay36 = new RispostaPayload("Capturing prey", 0, domD9);
+//		RispostaPayload dPay33 = new RispostaPayload("Algae and plants", 0, domD9);
+//		RispostaPayload dPay34 = new RispostaPayload("Seabirds and seals", 0, domD9);
+//		RispostaPayload dPay35 = new RispostaPayload("Small fish and squid", 1, domD9);
+//		RispostaPayload dPay36 = new RispostaPayload("Plankton and krill", 0, domD9);
 //
 //		Risposta d33 = aService.save(dPay33);
 //		Risposta d34 = aService.save(dPay34);
@@ -483,14 +486,14 @@
 //		Risposta d36 = aService.save(dPay36);
 //
 //		// DieciD
-//		DomandaPayload QuestionD10 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD10 = new DomandaPayload("Which of the following best describes the conservation "
+//				+ "status of sand tiger sharks (Carcharias taurus)?", Level.DIFFICILE);
 //		Domanda domD10 = dService.save(QuestionD10);
 //
-//		RispostaPayload dPay37 = new RispostaPayload("Stability and balance", 1, domD10);
-//		RispostaPayload dPay38 = new RispostaPayload("Steering", 0, domD10);
-//		RispostaPayload dPay39 = new RispostaPayload("Propulsion", 0, domD10);
-//		RispostaPayload dPay40 = new RispostaPayload("Capturing prey", 0, domD10);
+//		RispostaPayload dPay37 = new RispostaPayload("Least concern", 0, domD10);
+//		RispostaPayload dPay38 = new RispostaPayload("Endangered", 0, domD10);
+//		RispostaPayload dPay39 = new RispostaPayload("Vulnerable", 1, domD10);
+//		RispostaPayload dPay40 = new RispostaPayload("Critically endangered", 0, domD10);
 //
 //		Risposta d37 = aService.save(dPay37);
 //		Risposta d38 = aService.save(dPay38);
@@ -498,14 +501,13 @@
 //		Risposta d40 = aService.save(dPay40);
 //
 //		// UndiciD
-//		DomandaPayload QuestionD11 = new DomandaPayload("What is the primary function of a shark's dorsal fin?",
-//				Level.DIFFICILE);
+//		DomandaPayload QuestionD11 = new DomandaPayload("What is the approximate size range for adult tiger sharks (Galeocerdo cuvier)?", Level.DIFFICILE);
 //		Domanda domD11 = dService.save(QuestionD11);
 //
-//		RispostaPayload dPay41 = new RispostaPayload("Stability and balance", 1, domD11);
-//		RispostaPayload dPay42 = new RispostaPayload("Steering", 0, domD11);
-//		RispostaPayload dPay43 = new RispostaPayload("Propulsion", 0, domD11);
-//		RispostaPayload dPay44 = new RispostaPayload("Capturing prey", 0, domD11);
+//		RispostaPayload dPay41 = new RispostaPayload("1.8-2.4 meters", 0, domD11);
+//		RispostaPayload dPay42 = new RispostaPayload("0.6-1.2 meters", 0, domD11);
+//		RispostaPayload dPay43 = new RispostaPayload("4.5-5.5 meters", 1, domD11);
+//		RispostaPayload dPay44 = new RispostaPayload("3-3.7 meters", 0, domD11);
 //
 //		Risposta d41 = aService.save(dPay41);
 //		Risposta d42 = aService.save(dPay42);
