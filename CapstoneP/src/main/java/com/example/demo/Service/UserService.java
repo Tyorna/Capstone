@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.entities.User;
@@ -77,6 +78,7 @@ public class UserService {
 		return passwordEncoder.matches(rawPassword, encryptedPasswordFromDatabase);
 	}
 
+	@Transactional
 	public void saveUserPhoto(UUID userId, byte[] fotoAvatar) throws NotFoundException {
 		User user = findById(userId);
 		user.setFotoAvatar(fotoAvatar);

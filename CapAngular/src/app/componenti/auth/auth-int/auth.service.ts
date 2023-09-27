@@ -25,7 +25,6 @@ export class AuthService {
   login(data: { email: string; password: string }) {
     return this.http.post<AuthInt>(`${this.baseURL}auth/login`, data).pipe(
         tap((data) => {
-            console.log(data);
             this.authSubj.next(data);
             this.user = data;
             console.log(this.user);
