@@ -1,6 +1,6 @@
 <div class="father">
   <div class="container text-center">
-    <img src="../../../assets/animation/Animation - 1695925724418.gif" class= "shark" alt="Your GIF" >
+    <img src="../../../assets/animation/Animation - 1695925724418.gif" class= "shark" alt="Your GIF" *ngIf="hasError">
     <form #form="ngForm" (ngSubmit)="registra(form)">
       <div class="form-group  mb-4">
         <label for="username" class=" mb-2 text-white fw-semibold">Nome</label>
