@@ -9,40 +9,66 @@ html {
   background-size:cover;
 }
 .card {
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: rgba(195, 181, 124, 0.9);
+  border: 2px solid black;
+  box-shadow: 20px 20px 16px black;
+  max-width: 300px;
+  min-width: 200px;
 }
 
 input[type="radio"] {
-  cursor: pointer;
-  /* per cancellare stile di sistema checkbox */
-  appearance: none;
-  background-color: #ffffff;
-  border: 2px solid #0032fc;
-  width: 17px;
-  height: 17px;
+  display: none;
+}
+
+.level-selection label input:checked + span {
+  background-color: #00ff37;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.level-selection label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #0202ff;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  padding: 4px 15px 3px 2px;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+
+span:hover {
+  background-color: #d6d6e5;
+}
+
+span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
-}
-
-/* Stile del segno di spunta */
-input[type="radio"]::before {
-  content: "\2714";
-  display: block;
-  color: #fff;
-  text-align: center;
-  font-size: 8px;
-  visibility: hidden;
-}
-
-
-/* Stile del segno di spunta quando la checkbox è selezionata */
-input[type="radio"]:checked::before {
-  visibility: visible;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
 }
 
 
 .centro {
-  margin-left: 93px;
+  margin-left: 30%;
+}
+
+.btn{
+  background-color: #01ec34;
+}
+
+.btn:hover{
+  border: 2px solid black;
 }

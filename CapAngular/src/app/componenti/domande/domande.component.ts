@@ -81,7 +81,8 @@ export class DomandeComponent implements OnInit {
       return;
     }
 
-    if (this.currentQuestionIndex < this.questions.length - 1) {
+  //  if (this.currentQuestionIndex < this.questions.length - 1) {
+    if (this.currentQuestionIndex < 5) {
       this.isCurrentAnswerCorrect = false;
     this.isCurrentAnswerNotCorrect = false;
     this.correctAnswerIndex = null;
@@ -96,12 +97,12 @@ export class DomandeComponent implements OnInit {
       console.log('Reached the end of questions.');
       clearInterval(this.timerInterval);
       console.log('Stai ancora scorrendo?', this.remainingTime);
-      const totalQuestions = this.questions.length;
+      const totalQuestions = 6;
     const correctAnswers = this.correctScore;
     const selectedLevel = this.selectedLevel;
     const user = this.authService.recuperaUtenteAttuale();
     if (user) {
-      const score = parseFloat(((correctAnswers / totalQuestions) * 100).toFixed(2));
+      const score = parseFloat(((correctAnswers / 6) * 100).toFixed(2));
 console.log('Utente trovato', user.id, user.email);
 
 const  nuovoId = user.id.replace(/"/g, '');

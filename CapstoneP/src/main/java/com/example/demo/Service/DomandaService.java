@@ -1,6 +1,10 @@
 package com.example.demo.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +57,31 @@ public class DomandaService {
 	}
 
 	public List<Domanda> findByLevel(Level level) {
+
+		// crea variabile che tiene punto size.
+		// Metterle in un ciclo.
+		// Pusharli su un altra lista.
 		return qRepository.findByLevel(level);
+		// Dammi la size e da uesta seleziona random il numero che ti dico di elementi
+		// Prendine una casuale e rifallo senza tenerne una.
+	}
+
+	public List<Domanda> findAllByLevelRandomly(Level level) {
+		List<Domanda> questionsByLevel = qRepository.findByLevel(level);
+		if (questionsByLevel.isEmpty()) {
+			return questionsByLevel;
+		}
+		Random rnd = new Random();
+		Set<Integer> indiceTrovato = new HashSet<>();
+		List<Domanda> DomandeCasuali = new ArrayList<>();
+		for (int i = 0; i < questionsByLevel.size(); i++) {
+			int indice = rnd.nextInt(questionsByLevel.size());
+			if (!indiceTrovato.contains(indice)) {
+				indiceTrovato.add(indice);
+				DomandeCasuali.add(questionsByLevel.get(indice));
+			}
+		}
+
+		return DomandeCasuali;
 	}
 }

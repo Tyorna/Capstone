@@ -18,7 +18,7 @@ export class RisultatiComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.totalQuestions = +params['totalQuestions'];
       this.correctAnswers = +params['correctAnswers'];
-      this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100 * 100) / 100;
+      this.score = Math.round((this.correctAnswers / 6) * 100 * 100) / 100;
 
     });
   }

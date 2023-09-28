@@ -62,6 +62,6 @@ public class DomandaController {
 	public List<Domanda> getQuestionsByLevel(@PathVariable String level) {
 
 		Level questionLevel = Level.valueOf(level);
-		return qService.findByLevel(questionLevel);
+		return qService.findAllByLevelRandomly(questionLevel);
 	}
 }

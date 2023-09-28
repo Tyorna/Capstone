@@ -133,7 +133,7 @@
 //		Risposta a29 = aService.save(aPay29);
 //		Risposta a30 = aService.save(aPay30);
 //		Risposta a31 = aService.save(aPay31);
-//		Risposta a32 = aService.save(aPay31);
+//		Risposta a32 = aService.save(aPay32);
 //
 //		// Nove
 //		DomandaPayload QuestionPay9 = new DomandaPayload(
@@ -319,7 +319,8 @@
 //
 //		// DieciM
 //		DomandaPayload QuestionM10 = new DomandaPayload("What is the term for the mutualistic relationship between "
-//				+ "some cleaner fish and sharks, where the cleaner fish remove parasites from the shark's skin and mouth?", Level.MEDIO);
+//				+ "some cleaner fish and sharks, where the cleaner fish remove parasites from the shark's skin and mouth?",
+//				Level.MEDIO);
 //		Domanda domM10 = dService.save(QuestionM10);
 //
 //		RispostaPayload bPay37 = new RispostaPayload("Symbiotic grooming", 0, domM10);
@@ -333,8 +334,10 @@
 //		Risposta b40 = aService.save(bPay40);
 //
 //		// UndiciM
-//		DomandaPayload QuestionM11 = new DomandaPayload("    Which shark species has been referred to as the \"living fossil\" due "
-//				+ "to its ancient lineage and minimal evolutionary changes over millions of years?" ,Level.MEDIO);
+//		DomandaPayload QuestionM11 = new DomandaPayload(
+//				"    Which shark species has been referred to as the \"living fossil\" due "
+//						+ "to its ancient lineage and minimal evolutionary changes over millions of years?",
+//				Level.MEDIO);
 //		Domanda domM11 = dService.save(QuestionM11);
 //
 //		RispostaPayload bPay41 = new RispostaPayload("Bull Shark (Carcharhinus leucas)", 0, domM11);
@@ -349,7 +352,8 @@
 //
 //		// UnoD
 //		DomandaPayload QuestionD1 = new DomandaPayload("Which shark species is known for its incredible ability"
-//				+ " to jump up to 10 feet (3 meters) in the air while hunting, displaying impressive acrobatics?", Level.DIFFICILE);
+//				+ " to jump up to 10 feet (3 meters) in the air while hunting, displaying impressive acrobatics?",
+//				Level.DIFFICILE);
 //		Domanda domD1 = dService.save(QuestionD1);
 //
 //		RispostaPayload dPay1 = new RispostaPayload("Common Thresher Shark (Alopias vulpinus)", 1, domD1);
@@ -363,8 +367,10 @@
 //		Risposta d4 = aService.save(dPay4);
 //
 //		// DueD
-//		DomandaPayload QuestionD2 = new DomandaPayload("What is the term for the specialized scales found on the skin of"
-//				+ " some shark species, which are highly mineralized and resemble small teeth?", Level.DIFFICILE);
+//		DomandaPayload QuestionD2 = new DomandaPayload(
+//				"What is the term for the specialized scales found on the skin of"
+//						+ " some shark species, which are highly mineralized and resemble small teeth?",
+//				Level.DIFFICILE);
 //		Domanda domD2 = dService.save(QuestionD2);
 //
 //		RispostaPayload dPay5 = new RispostaPayload("Placoid scale", 0, domD2);
@@ -378,9 +384,11 @@
 //		Risposta d8 = aService.save(dPay8);
 //
 //		// TreD
-//		DomandaPayload QuestionD3 = new DomandaPayload("Which shark species is known for its remarkable ability to survive"
-//				+ " in extreme conditions, such as high salinity and low oxygen levels, and is sometimes "
-//				+ "called the \"couch potato\" of the deep sea?", Level.DIFFICILE);
+//		DomandaPayload QuestionD3 = new DomandaPayload(
+//				"Which shark species is known for its remarkable ability to survive"
+//						+ " in extreme conditions, such as high salinity and low oxygen levels, and is sometimes "
+//						+ "called the \"couch potato\" of the deep sea?",
+//				Level.DIFFICILE);
 //		Domanda domD3 = dService.save(QuestionM3);
 //
 //		RispostaPayload dPay9 = new RispostaPayload("Goblin Shark (Mitsukurina owstoni)", 0, domD3);
@@ -394,14 +402,17 @@
 //		Risposta d12 = aService.save(dPay12);
 //
 //		// 4D
-//		DomandaPayload QuestionD4 = new DomandaPayload("What is the primary reason why the \"megamouth shark\" (Megachasma pelagios) "
-//				+ "is considered one of the rarest sharks in the world?", Level.DIFFICILE);
+//		DomandaPayload QuestionD4 = new DomandaPayload(
+//				"What is the primary reason why the \"megamouth shark\" (Megachasma pelagios) "
+//						+ "is considered one of the rarest sharks in the world?",
+//				Level.DIFFICILE);
 //		Domanda domD4 = dService.save(QuestionD4);
 //
 //		RispostaPayload dPay13 = new RispostaPayload("It is a nocturnal species that only feeds at night", 0, domD4);
 //		RispostaPayload dPay14 = new RispostaPayload("It has a highly restricted habitat range", 0, domD4);
 //		RispostaPayload dPay15 = new RispostaPayload("It is difficult to study due to its elusive nature", 0, domD4);
-//		RispostaPayload dPay16 = new RispostaPayload("It is a nocturnal species that only feeds at night", 1, domD4);
+//		RispostaPayload dPay16 = new RispostaPayload("It is a deep-sea species that rarely comes to the surface.", 1,
+//				domD4);
 //
 //		Risposta d13 = aService.save(dPay13);
 //		Risposta d14 = aService.save(dPay14);
@@ -409,8 +420,10 @@
 //		Risposta d16 = aService.save(dPay16);
 //
 //		// 5D
-//		DomandaPayload QuestionD5 = new DomandaPayload("Which shark species holds the record for the deepest-dwelling"
-//				+ " shark, having been found at depths exceeding 8,000 meters in the Mariana Trench?", Level.DIFFICILE);
+//		DomandaPayload QuestionD5 = new DomandaPayload(
+//				"Which shark species holds the record for the deepest-dwelling"
+//						+ " shark, having been found at depths exceeding 8,000 meters in the Mariana Trench?",
+//				Level.DIFFICILE);
 //		Domanda domD5 = dService.save(QuestionD5);
 //
 //		RispostaPayload dPay17 = new RispostaPayload("Ghost Shark (Mitsukurina owstoni)", 1, domD5);
@@ -424,9 +437,11 @@
 //		Risposta d20 = aService.save(dPay20);
 //
 //		// SeiD
-//		DomandaPayload QuestionD6 = new DomandaPayload("Which shark species is known for its incredible deep-sea habitat,"
-//				+ " often residing in waters below 3,000 meters, and its unique ability to expel glowing"
-//				+ " clouds of bioluminescent fluid to confuse predators?", Level.DIFFICILE);
+//		DomandaPayload QuestionD6 = new DomandaPayload(
+//				"Which shark species is known for its incredible deep-sea habitat,"
+//						+ " often residing in waters below 3,000 meters, and its unique ability to expel glowing"
+//						+ " clouds of bioluminescent fluid to confuse predators?",
+//				Level.DIFFICILE);
 //		Domanda domD6 = dService.save(QuestionD6);
 //
 //		RispostaPayload dPay21 = new RispostaPayload("Whitecheek lanternshark (Etmopterus alphus)", 0, domD6);
@@ -440,8 +455,10 @@
 //		Risposta d24 = aService.save(dPay24);
 //
 //		// SetteD
-//		DomandaPayload QuestionD7 = new DomandaPayload("Which of the following shark species is known for its long gestation period, "
-//				+ "sometimes lasting more than a year?", Level.DIFFICILE);
+//		DomandaPayload QuestionD7 = new DomandaPayload(
+//				"Which of the following shark species is known for its long gestation period, "
+//						+ "sometimes lasting more than a year?",
+//				Level.DIFFICILE);
 //		Domanda domD7 = dService.save(QuestionD7);
 //
 //		RispostaPayload dPay25 = new RispostaPayload("Great Hammerhead (Sphyrna mokarran)", 0, domD7);
@@ -471,8 +488,10 @@
 //		Risposta d32 = aService.save(dPay32);
 //
 //		// NoveD
-//		DomandaPayload QuestionD9 = new DomandaPayload("Bull sharks (Carcharhinus leucas) are known for their aggressive feeding behavior. "
-//				+ "What type of prey do they primarily target?", Level.DIFFICILE);
+//		DomandaPayload QuestionD9 = new DomandaPayload(
+//				"Bull sharks (Carcharhinus leucas) are known for their aggressive feeding behavior. "
+//						+ "What type of prey do they primarily target?",
+//				Level.DIFFICILE);
 //		Domanda domD9 = dService.save(QuestionD9);
 //
 //		RispostaPayload dPay33 = new RispostaPayload("Algae and plants", 0, domD9);
@@ -501,7 +520,8 @@
 //		Risposta d40 = aService.save(dPay40);
 //
 //		// UndiciD
-//		DomandaPayload QuestionD11 = new DomandaPayload("What is the approximate size range for adult tiger sharks (Galeocerdo cuvier)?", Level.DIFFICILE);
+//		DomandaPayload QuestionD11 = new DomandaPayload(
+//				"What is the approximate size range for adult tiger sharks (Galeocerdo cuvier)?", Level.DIFFICILE);
 //		Domanda domD11 = dService.save(QuestionD11);
 //
 //		RispostaPayload dPay41 = new RispostaPayload("1.8-2.4 meters", 0, domD11);
