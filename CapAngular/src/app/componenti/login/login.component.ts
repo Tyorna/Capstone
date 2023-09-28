@@ -12,6 +12,7 @@ import { AuthInt } from '../auth/auth-int..interface';
 export class LoginComponent implements OnInit {
 
   isLoading = false;
+ hasError = false;
 
   constructor(private authSrv: AuthService, private router: Router) {}
 
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   accedi(form: NgForm) {
     this.isLoading = true;
+    this.hasError = false;
     console.log(form.value);
     try {
         this.authSrv.login(form.value).subscribe();
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
       this.isLoading = false;
       alert('Login sbagliato!');
       this.router.navigate(['auth/login']);
+      this.hasError = true;
       }
     }, 3000);
     } catch (error) {
