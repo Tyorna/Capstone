@@ -10,10 +10,6 @@ Funzionalità:
 
 Video:
 
-<video width="320" height="240" controls>
-  <source src="../Capstone/CapAngular/src/assets/video/SharkTest.mp4" type="video/mp4">
-</video>
-
 Tecnologie Utilizzate:
 - Frontend:
   - Angular
