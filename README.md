@@ -10,6 +10,10 @@ Funzionalità:
 
 Video:
 
+
+https://github.com/Tyorna/Capstone/assets/126703879/bbb500e9-63ac-4e89-8db3-f69ca8bf68cb
+
+
 Tecnologie Utilizzate:
 - Frontend:
   - Angular
