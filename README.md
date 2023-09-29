@@ -10,6 +10,10 @@ Funzionalità:
 
 Video:
 
+<video width="320" height="240" controls>
+  <source src="../Capstone/CapAngular/src/assets/video/SharkTest.mp4" type="video/mp4">
+</video>
+
 Tecnologie Utilizzate:
 - Frontend:
   - Angular
@@ -22,6 +26,6 @@ Tecnologie Utilizzate:
 - Database:
   - PostgreSQL
 
-Per iniziare:
+Versione:
 E stata creata usando Angular CLI: 14.2.12 
 
